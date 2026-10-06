@@ -44,3 +44,29 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Connecting to the FastAPI backend
+
+`npm start` serves the frontend on port 3000, but the data comes from the FastAPI backend that listens on `http://localhost:8000`. Follow these steps so the UI can talk to the API and you stop seeing "Cannot connect to server":
+
+1. **Prepare the backend**
+   ```bash
+   cd backend
+   python3 -m venv .venv   # optional but recommended
+   . .venv/bin/activate
+   python3 -m pip install -r requirements.txt
+   uvicorn main:app --reload --host 127.0.0.1 --port 8000
+   ```
+   Make sure `backend/.env` (or your shell environment) defines the same MySQL settings you use locally (`DB_HOST`, `DB_PORT`, `DB_NAME`, etc.).
+
+2. **Point the React app at that API**
+   ```bash
+   cd five-l
+   cp .env.example .env.local
+   npm install
+   npm start
+   ```
+   `REACT_APP_API_BASE` defaults to `http://localhost:8000`, but feel free to edit `.env.local` if you run the API somewhere else. The app looks up the value before falling back to the hardcoded local URLs.
+
+3. **Log in with a seeded user**
+   The demo user (`demo@five-l.ph` / `demo1234`) is created automatically on startup if it doesn't exist. Once the backend is reachable, the login form should stop showing the connectivity error and proceed to the dashboard.

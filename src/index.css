@@ -1,13 +1,344 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shared Five-L system surface: navy foundation with the pharmacy emerald accent. */
+.system-shell {
+  background:
+    radial-gradient(circle at 78% -8%, rgba(16, 185, 129, 0.2), transparent 25rem),
+    radial-gradient(circle at 12% 110%, rgba(14, 116, 144, 0.16), transparent 30rem),
+    linear-gradient(135deg, #071525 0%, #0b1b2b 48%, #063b3a 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.system-shell > div:not(aside) {
+  background: transparent;
+}
+
+/* ─── Global System-Wide Dark Mode ────────────────────────────────────── */
+html.dark {
+  color-scheme: dark;
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+html.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+/* App Background & Content Panels */
+html.dark .min-h-screen,
+html.dark .min-h-full,
+html.dark main {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+/* Cards, headers, panels, sections (EXCEPT sidebar) */
+html.dark header:not(aside *):not(aside),
+html.dark section:not(aside *):not(aside),
+html.dark article:not(aside *):not(aside),
+html.dark div.bg-white:not(aside *):not(aside),
+html.dark div.bg-\[\#f7f8fc\]:not(aside *):not(aside),
+html.dark div.bg-slate-50:not(aside *):not(aside) {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc;
+}
+
+/* Headings and primary text in Dark Mode */
+html.dark h1:not(aside *),
+html.dark h2:not(aside *),
+html.dark h3:not(aside *),
+html.dark h4:not(aside *),
+html.dark p.text-slate-900:not(aside *),
+html.dark p.text-slate-950:not(aside *),
+html.dark span.text-slate-900:not(aside *),
+html.dark td.text-slate-800:not(aside *),
+html.dark td.text-slate-900:not(aside *) {
+  color: #f8fafc !important;
+}
+
+/* Muted secondary text */
+html.dark p.text-slate-500:not(aside *),
+html.dark p.text-slate-400:not(aside *),
+html.dark span.text-slate-400:not(aside *) {
+  color: #94a3b8 !important;
+}
+
+/* Inputs, Selects, and Textareas */
+html.dark input:not(aside *),
+html.dark select:not(aside *),
+html.dark textarea:not(aside *) {
+  background-color: #1e293b !important;
+  border-color: #475569 !important;
+  color: #f8fafc !important;
+}
+
+/* POS checkout controls stay readable even when the app is in dark mode. */
+html.dark .pos-discount-radio {
+  appearance: auto;
+  accent-color: #059669;
+  background-color: #fff !important;
+  color-scheme: light;
+}
+
+html.dark .pos-cash-input {
+  background-color: #fff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  color-scheme: light;
+}
+
+/* Tables */
+html.dark table:not(aside *),
+html.dark tr:not(aside *),
+html.dark th:not(aside *),
+html.dark td:not(aside *) {
+  border-color: #334155 !important;
+}
+
+html.dark thead:not(aside *) {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+}
+
+html.dark tbody tr:not(aside *):hover {
+  background-color: #1e293b !important;
+}
+
+/* Modals & Dialogs */
+html.dark div[role="dialog"],
+html.dark div.MuiPaper-root {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+/* Ensure sidebar keeps its exact gradient & styling */
+aside,
+aside * {
+  color-scheme: light;
+}
+
+@layer base {
+  .theme {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+  }
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+  }
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  html {
+    font-family: var(--font-sans, 'Geist Variable', sans-serif);
+  }
+}
+
+html.dark .receipt-modal-backdrop .receipt-print-area,
+html.dark .receipt-modal-backdrop .receipt-slip {
+  background: #fff !important;
+  color: #020617 !important;
+  color-scheme: light;
+}
+
+html.dark .receipt-modal-backdrop .receipt-slip,
+html.dark .receipt-modal-backdrop .receipt-slip * {
+  border-color: #020617 !important;
+}
+
+html.dark .receipt-modal-backdrop .receipt-slip h2,
+html.dark .receipt-modal-backdrop .receipt-slip p,
+html.dark .receipt-modal-backdrop .receipt-slip span {
+  color: #020617 !important;
+}
+
+html.dark .receipt-modal-backdrop .receipt-slip .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.dark .receipt-modal-backdrop .receipt-slip .text-slate-700 {
+  color: #334155 !important;
+}
+
+html.dark .receipt-modal-backdrop .receipt-slip .text-emerald-600 {
+  color: #059669 !important;
+}
+
+.report-print-only {
+  display: none !important;
+}
+
+@media print {
+  @page {
+    margin: 10mm;
+    size: auto;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .receipt-print-area,
+  .receipt-print-area * {
+    visibility: visible !important;
+  }
+
+  .report-print-area,
+  .report-print-area * {
+    visibility: visible !important;
+  }
+
+  .report-print-area {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+  }
+
+  .report-print-only {
+    display: block !important;
+    margin-bottom: 16px !important;
+    color: #111827 !important;
+    text-align: center;
+  }
+
+  .report-print-only h1 {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+
+  .report-print-only h2 {
+    margin-top: 4px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .report-print-hide {
+    display: none !important;
+  }
+
+  .report-print-table {
+    max-height: none !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .report-print-table thead {
+    position: static !important;
+  }
+
+  .report-print-table tr {
+    break-inside: avoid;
+  }
+
+  .receipt-modal-backdrop {
+    position: static !important;
+    display: block !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    padding: 0 !important;
+  }
+
+  .receipt-print-area {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .receipt-print-actions {
+    display: none !important;
+  }
+
+  .receipt-slip {
+    max-width: 360px !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
+  }
 }

@@ -1,0 +1,931 @@
+Product,Category,Price,Quantity_in_stocks,Unit_of_measurement,Total_cost,Dosage_form,Classification,Unit_type
+KWELL LOTION,General Medicine / Others,120,19,Bottle,2280,Other,Generic,bottle
+KWELL SHAMPOO,General Medicine / Others,118,18,120 ml,2124,Other,Generic,unit
+KWELL SHAMPOO,General Medicine / Others,75,25,60 ml,1875,Other,Generic,unit
+KWELL SHAMPOO,General Medicine / Others,210,12,240 ml,2520,Other,Generic,unit
+LINDELL LOTION,General Medicine / Others,184,12,Bottle,2208,Other,Generic,bottle
+LINDELL LOTION,General Medicine / Others,166,19,120 ml,3154,Other,Generic,unit
+HYCLENS WOUND SPRAY,General Medicine / Others,120,17,60 ml,2040,Other,Generic,unit
+HYCLENS GARGLE,General Medicine / Others,314,19,240 ml,5966,Other,Generic,unit
+HYCLENS OB,General Medicine / Others,117,18,30 ml,2106,Other,Generic,unit
+HYCLENS SOLUTION,General Medicine / Others,186,15,120 ml,2790,Other,Generic,unit
+BEROCCA TAB,Oral Solids (Tablets/Capsules),105,21,60 ml,2205,Tablet,Generic,pcs
+BEROCCA TAB,Oral Solids (Tablets/Capsules),581.25,15,60 ml,8718.75,Tablet,Generic,pcs
+VIVALYTE,General Medicine / Others,241,18,100 ml,4338,Other,Generic,unit
+EYEMO RED,General Medicine / Others,177.07,22,Bottle,3895.54,Other,Generic,bottle
+EYEMO REFRESH,General Medicine / Others,293,22,Bottle,6446,Other,Generic,bottle
+BACTIDOL GARGLE,Antibiotics,293,12,120 ml,3516,Other,Generic,unit
+BACTIDOL GARGLE,Antibiotics,408.16,26,120 ml,10612.16,Other,Generic,unit
+BACTIDOL GARGLE,Antibiotics,217.44,15,60 ml,3261.6,Other,Generic,unit
+BACTIDOL GARGLE,Antibiotics,438.32,20,120 ml,8766.4,Other,Generic,unit
+BETADINE GARGLE,General Medicine / Others,222.37,25,60 ml,5559.25,Other,Generic,unit
+BETADINE GARGLE,General Medicine / Others,125,30,30 ml,3750,Other,Generic,unit
+LISTERINE TOTAL CARE,General Medicine / Others,118,18,120 ml,2124,Other,Generic,unit
+LISTERINE TOTAL CARE,General Medicine / Others,220,23,240 ml,5060,Other,Generic,unit
+LISTERINE FRESH BURST,General Medicine / Others,78,20,15 ml,1560,Other,Generic,unit
+LISTERINE FRESH BURST,General Medicine / Others,140,22,30 ml,3080,Other,Generic,unit
+LISTERINE COOL MINT,General Medicine / Others,155,35,120 ml,5425,Other,Generic,unit
+LISTERINE COOL MINT,General Medicine / Others,280,19,240 ml,5320,Other,Generic,unit
+LISTERINE ZERO,General Medicine / Others,160,15,120 ml,2400,Other,Generic,unit
+DIFFLAM C GARGLE,General Medicine / Others,285,15,240 ml,4275,Other,Generic,unit
+DIFFLAM C SOLUTION,General Medicine / Others,305,35,240 ml,10675,Other,Generic,unit
+ORAHEX AF,General Medicine / Others,173,12,120 ml,2076,Other,Generic,unit
+RM HEXITIDINE,General Medicine / Others,185,18,120 ml,3330,Other,Generic,unit
+RM HEXITIDINE,General Medicine / Others,325,12,240 ml,3900,Other,Generic,unit
+COLGATE PLAX,General Medicine / Others,369,35,120 ml,12915,Other,Generic,unit
+COLGATE PLAX,General Medicine / Others,330,13,120 ml,4290,Other,Generic,unit
+BETADINE SOLUTION,General Medicine / Others,15,26,10 MG CAP,390,Other,Generic,pcs
+BETADINE SOLUTION,General Medicine / Others,95.69,15,15 ml,1435.35,Other,Generic,unit
+BETADINE SOLUTION,General Medicine / Others,114,28,60 ml,3192,Other,Generic,unit
+VENTOLIN SYRUP,Oral Liquids (Syrup/Suspension),135,24,60 ml,3240,Syrup,Generic,bottle
+VENTOLIN EXPECT,General Medicine / Others,238,23,120 ml,5474,Other,Generic,unit
+VENTOLIN EXPECT,General Medicine / Others,143,19,60 ml,2717,Other,Generic,unit
+XYZAL,General Medicine / Others,268,26,75 ml,6968,Other,Generic,unit
+CEPOREX DROPS,Ophthalmic/Otic/Oral Drops,183.6,27,Bottle,4957.2,Drops,Generic,bottle
+CEPOREX SUSPENSION,Oral Liquids (Syrup/Suspension),178.3,32,125mg/70mg,5705.6,Suspension,Generic,bottle
+CEPOREX SUSPENSION,Oral Liquids (Syrup/Suspension),297.33,30,250mg/70mg,8919.9,Suspension,Generic,bottle
+ILOSOME DROPS,Ophthalmic/Otic/Oral Drops,228.74,18,Bottle,4117.32,Drops,Generic,bottle
+ILOSOME SUSPENSION,Oral Liquids (Syrup/Suspension),321.22,14,125mg/60mg,4497.08,Suspension,Generic,bottle
+ILOSOME SUSPENSION DS,Oral Liquids (Syrup/Suspension),468.21,22,250mg/60ml,10300.62,Suspension,Generic,bottle
+CECLOR DROPS,Ophthalmic/Otic/Oral Drops,372.17,28,Bottle,10420.76,Drops,Generic,bottle
+CECLOR SUSPENSION,Oral Liquids (Syrup/Suspension),354.44,31,125mg/60ml,10987.64,Suspension,Generic,bottle
+CECLOR SUSPENSION,Oral Liquids (Syrup/Suspension),597.48,16,250mg/60ml,9559.68,Suspension,Generic,bottle
+ZINNAT SUSPENSION,Oral Liquids (Syrup/Suspension),329.6,24,125mg/60ml,7910.4,Suspension,Generic,bottle
+ZINNAT SUSPENSION,Oral Liquids (Syrup/Suspension),498.6,22,250mg/50ml,10969.2,Suspension,Generic,bottle
+CLARITIN SYRUP,Oral Liquids (Syrup/Suspension),180.55,24,30ml,4333.2,Syrup,Generic,bottle
+CIMEX SUSPENSION,Oral Liquids (Syrup/Suspension),313.5,26,125mg/50ml,8151,Suspension,Generic,bottle
+CIMEX SUSPENSION,Oral Liquids (Syrup/Suspension),424.11,24,250mg/50ml,10178.64,Suspension,Generic,bottle
+AUGMETIN SUSPENSION,Oral Liquids (Syrup/Suspension),192.86,22,70ml,4242.92,Suspension,Generic,bottle
+AUGMETIN SUSPENSION,Oral Liquids (Syrup/Suspension),160,15,156mg,2400,Suspension,Generic,bottle
+AUGMETIN SUSPENSION,Oral Liquids (Syrup/Suspension),242,23,312.5 mg,5566,Suspension,Generic,bottle
+AUGMETIN SUSPENSION,Oral Liquids (Syrup/Suspension),428.57,23,642 mg,9857.11,Suspension,Generic,bottle
+AUGMETIN SUSPENSION,Oral Liquids (Syrup/Suspension),265,24,457mg/35ml,6360,Suspension,Generic,bottle
+AUGMETIN SUSPENSION,Oral Liquids (Syrup/Suspension),306.25,25,457mg/70ml,7656.25,Suspension,Generic,bottle
+XYSAL ORAL DROPS,Ophthalmic/Otic/Oral Drops,243.5,23,10 ml,5600.5,Drops,Generic,bottle
+DALACIN SUSP,General Medicine / Others,515.22,21,60 ml,10819.62,Suspension,Generic,bottle
+BISOLVON AD,General Medicine / Others,292,22,8mg /125ml,6424,Other,Generic,unit
+DUPHALAC SYRUP,Oral Liquids (Syrup/Suspension),368.82,26,120ml,9589.32,Syrup,Generic,bottle
+DUPHALAC SYRUP,Oral Liquids (Syrup/Suspension),150.44,36,45ml,5415.84,Syrup,Generic,bottle
+BISOLVON,General Medicine / Others,126,28,4mg/60ml,3528,Other,Generic,unit
+TEMPRA DROPS,Ophthalmic/Otic/Oral Drops,74.37,35,15ml,2602.95,Drops,Generic,bottle
+TEMPRA DROPS,Ophthalmic/Otic/Oral Drops,122.24,42,30ml,5134.08,Drops,Generic,bottle
+TEMPRA SYRUP,Oral Liquids (Syrup/Suspension),136,35,120mg/60ml,4760,Syrup,Generic,bottle
+TEMPRA SYRUP,Oral Liquids (Syrup/Suspension),55,49,120mg/30ml,2695,Syrup,Generic,bottle
+TEMPRA SYRUP,Oral Liquids (Syrup/Suspension),136,46,250mg/60ml,6256,Syrup,Generic,bottle
+TEMPRA SYRUP,Oral Liquids (Syrup/Suspension),67,44,250mg/30ml,2948,Syrup,Generic,bottle
+PROPAN DROP TLC,General Medicine / Others,77.43,46,Bottle,3561.78,Drops,Generic,bottle
+PROPAN TLC SYRUP,Oral Liquids (Syrup/Suspension),156.81,42,120ml,6586.02,Syrup,Generic,bottle
+PROPAN TLC SYRUP,Oral Liquids (Syrup/Suspension),95.96,44,60ml,4222.24,Syrup,Generic,bottle
+PROPAN TLC SYRUP,Oral Liquids (Syrup/Suspension),288.84,46,250ml,13286.64,Syrup,Generic,bottle
+PROPAN PLN SYRUP,Oral Liquids (Syrup/Suspension),225.75,48,60ml,10836,Syrup,Generic,bottle
+PROPAN PLN SYRUP,Oral Liquids (Syrup/Suspension),467.19,42,120ml,19621.98,Syrup,Generic,bottle
+NASATAPP SYRUP,Oral Liquids (Syrup/Suspension),99.23,47,60ml,4663.81,Syrup,Generic,bottle
+CALPOL DROPS,Ophthalmic/Otic/Oral Drops,59.96,42,10ml,2518.32,Drops,Generic,bottle
+CALPOL SYRUP,Oral Liquids (Syrup/Suspension),89.54,45,60ml,4029.3,Syrup,Generic,bottle
+CALPOL SYRUP 6 plus,Oral Liquids (Syrup/Suspension),135.62,40,60ml,5424.8,Syrup,Generic,bottle
+MEPTIN SYRUP,Oral Liquids (Syrup/Suspension),201.4,46,60ml,9264.4,Syrup,Generic,bottle
+CEELIN DROPS,Ophthalmic/Otic/Oral Drops,68,49,15ml,3332,Drops,Generic,bottle
+CEELIN DROPS,Ophthalmic/Otic/Oral Drops,123.77,47,30ml,5817.19,Drops,Generic,bottle
+CEELIN SYRUP,Oral Liquids (Syrup/Suspension),116.08,55,120ml,6384.4,Syrup,Generic,bottle
+CEELIN SYRUP,Oral Liquids (Syrup/Suspension),217.34,65,250ml,14127.1,Syrup,Generic,bottle
+CEELIN SYRUP,Oral Liquids (Syrup/Suspension),63,65,60ml,4095,Syrup,Generic,bottle
+CEELIN SYRUP,Oral Liquids (Syrup/Suspension),393.27,48,500ml,18876.96,Syrup,Generic,bottle
+CEELIN PLUS DROPS,Ophthalmic/Otic/Oral Drops,82.01,55,15ml,4510.55,Drops,Generic,bottle
+CEELIN PLUS DROPS,Ophthalmic/Otic/Oral Drops,143.3,54,30ml,7738.2,Drops,Generic,bottle
+CEELIN PLUS SYRUP,Oral Liquids (Syrup/Suspension),139.8,55,120ml,7689,Syrup,Generic,bottle
+CEELIN PLUS SYRUP,Oral Liquids (Syrup/Suspension),74.29,54,60ml,4011.66,Syrup,Generic,bottle
+CEELIN PLUS SYRUP,Oral Liquids (Syrup/Suspension),260.15,55,250ml,14308.25,Syrup,Generic,bottle
+APPEBON KID SYRUP,Oral Liquids (Syrup/Suspension),442.98,46,120ml,20377.08,Syrup,Generic,bottle
+APPEBON KID SYRUP,Oral Liquids (Syrup/Suspension),227.38,64,60ml,14552.32,Syrup,Generic,bottle
+APPEBON KID SYRUP,Oral Liquids (Syrup/Suspension),310.15,52,250ml,16127.8,Syrup,Generic,bottle
+GROWEE DROPS,Ophthalmic/Otic/Oral Drops,80.54,58,Bottle,4671.32,Drops,Generic,bottle
+GROWEE SYRUP,Oral Liquids (Syrup/Suspension),157.4,70,120ml,11018,Syrup,Generic,bottle
+GROWEE SYRUP,Oral Liquids (Syrup/Suspension),281.04,64,250ml,17986.56,Syrup,Generic,bottle
+ENERVON SYRUP,Oral Liquids (Syrup/Suspension),235.18,62,250ml,14581.16,Syrup,Generic,bottle
+ENERVON SYRUP,Oral Liquids (Syrup/Suspension),136.48,40,120ml,5459.2,Syrup,Generic,bottle
+ENERVON SYRUP,Oral Liquids (Syrup/Suspension),65.4,58,60ml,3793.2,Syrup,Generic,bottle
+FERLIN DROPS,Ophthalmic/Otic/Oral Drops,116.65,58,Bottle,6765.7,Drops,Generic,bottle
+FERLIN SYRUP,Oral Liquids (Syrup/Suspension),298.8,59,Bottle,17629.2,Syrup,Generic,bottle
+NUTROPLEX SYRUP,Oral Liquids (Syrup/Suspension),78.66,54,60ml,4247.64,Syrup,Generic,bottle
+NUTROPLEX SYRUP,Oral Liquids (Syrup/Suspension),149.43,58,120ml,8666.94,Syrup,Generic,bottle
+NUTROPLEX SYRUP,Oral Liquids (Syrup/Suspension),258.4,52,250 ml,13436.8,Syrup,Generic,bottle
+NUTRILIN DROPS,Ophthalmic/Otic/Oral Drops,77.5,54,15ml,4185,Drops,Generic,bottle
+NUTRILIN DROPS,Ophthalmic/Otic/Oral Drops,115.18,52,30ml,5989.36,Drops,Generic,bottle
+NUTRILIN SYRUP,Oral Liquids (Syrup/Suspension),172.97,59,120ml,10205.23,Syrup,Generic,bottle
+NUTRILIN SYRUP,Oral Liquids (Syrup/Suspension),303.23,60,250ml,18193.8,Syrup,Generic,bottle
+ALLERZET SYRUP,Oral Liquids (Syrup/Suspension),218.24,55,60ml,12003.2,Syrup,Generic,bottle
+ALLERZET SYRUP,Oral Liquids (Syrup/Suspension),138.76,60,30ml,8325.6,Syrup,Generic,bottle
+TIKI TIKI DROPS,Ophthalmic/Otic/Oral Drops,49.06,58,15ml,2845.48,Drops,Generic,bottle
+TIKI TIKI DROPS,Ophthalmic/Otic/Oral Drops,77.78,54,30ml,4200.12,Drops,Generic,bottle
+TIKI TIKI SYRUP,Oral Liquids (Syrup/Suspension),58.54,58,60ml,3395.32,Syrup,Generic,bottle
+TIKI TIKI SYRUP,Oral Liquids (Syrup/Suspension),108.39,52,120ml,5636.28,Syrup,Generic,bottle
+BIOGESIC DROPS,Ophthalmic/Otic/Oral Drops,65.49,70,Bottle,4584.3,Drops,Generic,bottle
+BIOGESIC SYRUP,Oral Liquids (Syrup/Suspension),77.44,67,120mg/60ml,5188.48,Syrup,Generic,bottle
+BIOGESIC SYRUP,Oral Liquids (Syrup/Suspension),121.74,66,250mg/60ml,8034.84,Syrup,Generic,bottle
+DISUDRIN DROPS,Ophthalmic/Otic/Oral Drops,107.49,60,Bottle,6449.4,Drops,Generic,bottle
+DISUDRIN SYRUP,Oral Liquids (Syrup/Suspension),109.52,58,60ml,6352.16,Syrup,Generic,bottle
+DISUDRIN SYRUP,Oral Liquids (Syrup/Suspension),164.54,58,120ml,9543.32,Syrup,Generic,bottle
+NEOZEP DROPS,Ophthalmic/Otic/Oral Drops,91.26,52,Bottle,4745.52,Drops,Generic,bottle
+NEOZEP SYRUP,Oral Liquids (Syrup/Suspension),91.26,53,Bottle,4836.78,Syrup,Generic,bottle
+SOLMUX DROP,General Medicine / Others,94.58,69,Bottle,6526.02,Drops,Generic,bottle
+SOLMUX SYRUP,Oral Liquids (Syrup/Suspension),100.83,66,200mg/60ml,6654.78,Syrup,Generic,bottle
+SOLMUX SYRUP,Oral Liquids (Syrup/Suspension),153.25,65,200m/120ml,9961.25,Syrup,Generic,bottle
+SOLMUX SYRUP,Oral Liquids (Syrup/Suspension),95.66,68,100mg/60ml,6504.88,Syrup,Generic,bottle
+COMPRILES SYP,General Medicine / Others,94.11,66,Bottle,6211.26,Syrup,Generic,bottle
+APPEBON WITH IRON,General Medicine / Others,475.7,35,120ml,16649.5,Other,Generic,unit
+APPEBON WITH IRON,General Medicine / Others,249.94,35,60ml,8747.9,Other,Generic,unit
+SOLMUX FTE,General Medicine / Others,123.05,68,60ml,8367.4,Other,Generic,unit
+ASMALIN SYRUP,Oral Liquids (Syrup/Suspension),110.56,58,Bottle,6412.48,Syrup,Generic,bottle
+ASMALIN BRONCHO SYP,General Medicine / Others,125.32,46,Bottle,5764.72,Syrup,Generic,bottle
+AMOCLAV SUSP,General Medicine / Others,235.51,56,228mg/70ml,13188.56,Suspension,Generic,bottle
+AMOCLAV SUSP,General Medicine / Others,226.95,47,457mg/35ml,10666.65,Suspension,Generic,bottle
+AMOCLAV SUSP,General Medicine / Others,398.73,26,457mg/70ml,10366.98,Suspension,Generic,bottle
+CEFALIN DROPS,Ophthalmic/Otic/Oral Drops,137.73,25,Bottle,3443.25,Drops,Generic,bottle
+CEFALIN SUSP,Antibiotics,158.52,28,125mg/60ml,4438.56,Suspension,Generic,bottle
+CEFALIN SUSP,Antibiotics,262.44,26,250mg/60ml,6823.44,Suspension,Generic,bottle
+CHOLINERV DROPS,Ophthalmic/Otic/Oral Drops,203.16,33,Bottle,6704.28,Drops,Generic,bottle
+RELESTAL DROPS,Ophthalmic/Otic/Oral Drops,160.48,31,Bottle,4974.88,Drops,Generic,bottle
+RELESTAL SYRUP,Oral Liquids (Syrup/Suspension),160.55,30,60ml,4816.5,Syrup,Generic,bottle
+PRED 10 SYRUP,Oral Liquids (Syrup/Suspension),99.51,23,30ml,2288.73,Syrup,Generic,bottle
+PRED 10 SYRUP,Oral Liquids (Syrup/Suspension),179.49,28,60ml,5025.72,Syrup,Generic,bottle
+PRED 20 SYRUP,Oral Liquids (Syrup/Suspension),100,28,30ml,2800,Syrup,Generic,bottle
+PRED 20 SYRUP,Oral Liquids (Syrup/Suspension),200,29,60ml,5800,Syrup,Generic,bottle
+MUCOSOLVAN DROPS,Ophthalmic/Otic/Oral Drops,120,27,Bottle,3240,Drops,Generic,bottle
+MUCOSOLVAN SYRUP,Oral Liquids (Syrup/Suspension),128,26,15mg/60ml,3328,Syrup,Generic,bottle
+MUCOSOLVAN SYRUP,Oral Liquids (Syrup/Suspension),172,24,30mg/60ml,4128,Syrup,Generic,bottle
+LEVOPRONT SYP,General Medicine / Others,410.69,26,60ml,10677.94,Syrup,Generic,bottle
+DUKCOLAX SYP,General Medicine / Others,249,23,Bottle,5727,Syrup,Generic,bottle
+KLIX SYRUP,Oral Liquids (Syrup/Suspension),224.13,27,Bottle,6051.51,Syrup,Generic,bottle
+CLUSIBVOL SYP,General Medicine / Others,77.5,29,60ml,2247.5,Syrup,Generic,bottle
+CLUSIBVOL SYP,General Medicine / Others,131,30,120ml,3930,Syrup,Generic,bottle
+CLUSIBVOL SYP,General Medicine / Others,230.75,31,250ml,7153.25,Syrup,Generic,bottle
+BUCLISYR SYP,General Medicine / Others,316.86,24,120ml,7604.64,Syrup,Generic,bottle
+ADVIL SUSP,General Medicine / Others,81,23,Bottle,1863,Suspension,Generic,bottle
+DIMETAPP SYP,General Medicine / Others,97.76,23,Bottle,2248.48,Syrup,Generic,bottle
+LOVISCOL DROPS,Ophthalmic/Otic/Oral Drops,90.65,22,Bottle,1994.3,Drops,Generic,bottle
+LOVISCOL SYRUP,Oral Liquids (Syrup/Suspension),95.06,21,60ml,1996.26,Syrup,Generic,bottle
+ROBITUSSIN DM SYP,General Medicine / Others,107.15,32,60ml,3428.8,Syrup,Generic,bottle
+ROBITUSSIN DM SYP,General Medicine / Others,157,22,120ml,3454,Syrup,Generic,bottle
+ROBITUSSIN EXP SYP,General Medicine / Others,78.4,29,60ml,2273.6,Syrup,Generic,bottle
+ROBITUSSIN EXP SYP,General Medicine / Others,115.64,25,120ml,2891,Syrup,Generic,bottle
+ASMACAIRE SYP,General Medicine / Others,82.6,28,Bottle,2312.8,Syrup,Generic,bottle
+BRONCAIRE EXP SYP,General Medicine / Others,96.32,30,Bottle,2889.6,Syrup,Generic,bottle
+PROX-S SYP,General Medicine / Others,78,29,60ml,2262,Syrup,Generic,bottle
+PROX-S SYP,General Medicine / Others,148,26,120ml,3848,Syrup,Generic,bottle
+FLAGYL SYP,General Medicine / Others,120,24,Bottle,2880,Syrup,Generic,bottle
+MAALOX SUSP PLUS,General Medicine / Others,284,22,180ml,6248,Suspension,Generic,bottle
+MAALOX SUSP PLUS,General Medicine / Others,119,27,60ml,3213,Suspension,Generic,bottle
+ASFRENON PLN SYP,General Medicine / Others,90.2,25,Bottle,2255,Syrup,Generic,bottle
+ASFRENON GF SYP,General Medicine / Others,100.44,87,Bottle,8738.28,Syrup,Generic,bottle
+BIOGESIC TAB,Oral Solids (Tablets/Capsules),3.57,550,Per pc/tablet,1963.5,Tablet,Generic,pcs
+NEOZEP TAB,Oral Solids (Tablets/Capsules),4.72,450,Per pc/tablet,2124,Tablet,Generic,pcs
+MEDICOL CAP,General Medicine / Others,10.38,426,400mg per pc /cap,4421.88,Capsule,Generic,pcs
+DIATABS CAP,Oral Solids (Tablets/Capsules),7.15,745,Per pc/cap,5326.75,Capsule,Generic,pcs
+TEMPRA TAB KID,Oral Solids (Tablets/Capsules),3.43,624,Per pc/ tablet,2140.32,Tablet,Generic,pcs
+TEMPRA TAB ADULT,Oral Solids (Tablets/Capsules),3.88,856,Per pc/tablet,3321.28,Tablet,Generic,pcs
+CORTAL TAB,Oral Solids (Tablets/Capsules),7.9,944,Per pc/ tablet,7457.6,Tablet,Generic,pcs
+BONAMINE TAB KID,Oral Solids (Tablets/Capsules),11.62,112,Per pc/ tablet,1301.44,Tablet,Generic,pcs
+BONAMINE TAB ADULT,Oral Solids (Tablets/Capsules),12.55,325,Per pc/tablet,4078.75,Tablet,Generic,pcs
+ENERVON TAB,Oral Solids (Tablets/Capsules),6.16,420,Per pc/tablet,2587.2,Tablet,Generic,pcs
+MYRA CAP,General Medicine / Others,11.12,350,400mg,3892,Capsule,Generic,pcs
+CENTRUM TAB,Oral Solids (Tablets/Capsules),9.99,258,Per pc/tablet,2577.42,Tablet,Generic,pcs
+STRESS TAB,Oral Solids (Tablets/Capsules),10.2,481,Per pc/tablet,4906.2,Tablet,Generic,pcs
+PONSTANT SF CAP,General Medicine / Others,37.2,322,Per pc/cap,11978.4,Capsule,Generic,pcs
+SOLMUX CAP,General Medicine / Others,9.89,295,Per pc/cap,2917.55,Capsule,Generic,pcs
+VENTOLIN TAB,Oral Solids (Tablets/Capsules),8.83,214,Per pc/tablet,1889.62,Tablet,Generic,pcs
+VENTOLIN ROTACAP,General Medicine / Others,7.78,201,Per pc/tablet,1563.78,Other,Generic,pcs
+CELEBREX,General Medicine / Others,73.93,115,Per pc/cap 200mg,8501.95,Other,Generic,pcs
+VENTOLIN NEBULE,General Medicine / Others,35.1,251,Per pc/nebules,8810.1,Other,Generic,pcs
+CEFUROXIME TAB,Oral Solids (Tablets/Capsules),27.61,322,Per pc/ tablet,8890.42,Tablet,Generic,pcs
+MEFENAMIC CAP,General Medicine / Others,1.85,315,Per pc/ tablet,582.75,Capsule,Generic,pcs
+IMODIUM CAP,General Medicine / Others,13.95,213,Per pc/cap,2971.35,Capsule,Generic,pcs
+AMLODIPINE TAB,Oral Solids (Tablets/Capsules),3.6,405,5mg,1458,Tablet,Generic,pcs
+LOSARTAN TAB,Oral Solids (Tablets/Capsules),2.78,325,50mg,903.5,Tablet,Generic,pcs
+CLOPIDOGREL TAB,Oral Solids (Tablets/Capsules),3.28,264,Per pc/ tablet,865.92,Tablet,Generic,pcs
+ASMALIN NEB,General Medicine / Others,24.28,85,Per pc/nebules,2063.8,Other,Generic,pcs
+DUAVENT NEB,General Medicine / Others,37.89,34,Per pc/nebules,1288.26,Other,Generic,pcs
+CO-AMOXICLAV TAB,Oral Solids (Tablets/Capsules),18.19,426,Per pc/ tablet,7748.94,Tablet,Generic,pcs
+CLINDAMYCIN CAP,General Medicine / Others,4,265,300mg,1060,Capsule,Generic,pcs
+NORVASC,General Medicine / Others,20.22,369,Per pc/cap,7461.18,Other,Generic,pcs
+TRANEXAMIC CAP,General Medicine / Others,7.45,420,Per pc/cap,3129,Capsule,Generic,pcs
+ULTRAXIME,General Medicine / Others,596.83,40,100mg/30ml,23873.2,Other,Generic,unit
+ULTRAXIME,General Medicine / Others,845.07,30,100mg/60ml,25352.1,Other,Generic,unit
+ULTRAXIME,General Medicine / Others,249.94,40,20mg/10ml,9997.6,Other,Generic,unit
+ZENITH,General Medicine / Others,537.84,62,20mg/20ml,33346.08,Other,Generic,unit
+XELENT,General Medicine / Others,378.15,62,50mg/20ml,23445.3,Other,Generic,unit
+XELENT,General Medicine / Others,559.46,62,125mg/105ml,34686.52,Other,Generic,unit
+CLARITHROCID SUSP,General Medicine / Others,183.61,163,125mg,29928.43,Suspension,Generic,bottle
+CLARITHROCID SUSP,General Medicine / Others,406.56,101,250mg,41062.56,Suspension,Generic,bottle
+TUSERAN NIGHT,General Medicine / Others,119.27,163,60ml,19441.01,Other,Generic,unit
+SOLMUX BRONCHO,General Medicine / Others,126.38,163,60ml,20599.94,Other,Generic,unit
+KIDZ KIT 2 SYRUP,Oral Liquids (Syrup/Suspension),344.29,45,Bottle,15493.05,Syrup,Generic,bottle
+KIDZ KIT 2 SYRUP,Oral Liquids (Syrup/Suspension),443.04,58,Bottle,25696.32,Syrup,Generic,bottle
+BREZU SYRUP,Oral Liquids (Syrup/Suspension),213,58,Bottle,12354,Syrup,Generic,bottle
+NATRAVOX SUSP,General Medicine / Others,183.2,36,228mg/70ml,6595.2,Suspension,Generic,bottle
+NATRAVOX SUSP,General Medicine / Others,234.51,56,457mg/70ml,13132.56,Suspension,Generic,bottle
+NATRAVOX SUSP,General Medicine / Others,170.22,69,156mg/60ml,11745.18,Suspension,Generic,bottle
+NATRAVOX SUSP,General Medicine / Others,300.45,95,457mg /70ml,28542.75,Suspension,Generic,bottle
+NATRAVOX SUSP,General Medicine / Others,262.5,75,642mg/70ml,19687.5,Suspension,Generic,bottle
+PARACETAMOL AMP,General Medicine / Others,41.6,550,per pc/amp,22880,Injectable,Generic,ampule
+FUROSEMIDE AMP,General Medicine / Others,53.3,97,per pc/amp,5170.1,Injectable,Generic,ampule
+CEFUROXIME VIAL,Antibiotics,188.5,97,Per pc/vial,18284.5,Injectable,Generic,vial
+CEFRIAXOME VIAL,Antibiotics,170.3,162,Per pc/vial,27588.6,Injectable,Generic,vial
+HYOSCIENE AMP,General Medicine / Others,26.23,132,per pc/amp,3462.36,Injectable,Generic,ampule
+BIGUERLAI TEA,General Medicine / Others,6.32,869,Per pc/ sachet,5492.08,Other,Generic,pcs
+BIOFIT TEA,General Medicine / Others,6.32,735,Per pc/ sachet,4645.2,Other,Generic,pcs
+STREPSILS,General Medicine / Others,57.27,34,Box,1947.18,Other,Generic,box
+TRUST PILLS,General Medicine / Others,42.95,367,Per pc/ pill,15762.65,Tablet,Generic,pcs
+LADY PILLS,General Medicine / Others,42.95,267,Per pc/ pill,11467.65,Tablet,Generic,pcs
+MICROPIL PILLS,General Medicine / Others,63.24,357,Per pc/ pill,22576.68,Tablet,Generic,pcs
+DAPHNE PILLS,General Medicine / Others,131.13,220,Per pc/ pill,28848.6,Tablet,Generic,pcs
+HYDRITE POWDER SACHET,General Medicine / Others,15.64,966,Per pc/ sachet,15108.24,Other,Generic,pcs
+PARACETAMOL DROPS,Ophthalmic/Otic/Oral Drops,15,99,Bottle,1485,Drops,Generic,bottle
+PARACETAMOL SYRUP,Oral Liquids (Syrup/Suspension),21.31,65,125mg/60ml,1385.15,Syrup,Generic,bottle
+PARACETAMOL SYRUP,Oral Liquids (Syrup/Suspension),22.95,77,250mg/60ml,1767.15,Syrup,Generic,bottle
+AMBROXOL DROPS,Ophthalmic/Otic/Oral Drops,19.67,68,Bottle,1337.56,Drops,Generic,bottle
+AMBROXOL SYRUP,Oral Liquids (Syrup/Suspension),18.03,49,15mg/60ml,883.47,Syrup,Generic,bottle
+AMBROXOL SYRUP,Oral Liquids (Syrup/Suspension),21.31,86,30mg/60ml,1832.66,Syrup,Generic,bottle
+CARBOCISTEINE DROPS,Ophthalmic/Otic/Oral Drops,19.84,66,Bottle,1309.44,Drops,Generic,bottle
+CARBOCISTEINE SYRUP,Oral Liquids (Syrup/Suspension),24.16,68,125mg,1642.88,Syrup,Generic,bottle
+CARBOCISTEINE SYRUP,Oral Liquids (Syrup/Suspension),29.51,76,250mg,2242.76,Syrup,Generic,bottle
+MEFENAMIC SYRUP,Oral Liquids (Syrup/Suspension),15,68,Bottle,1020,Syrup,Generic,bottle
+SALBUTAMOL SYRUP,Oral Liquids (Syrup/Suspension),19.67,68,60ml,1337.56,Syrup,Generic,bottle
+PHENYLPROPANOLAMINE DROPS,Ophthalmic/Otic/Oral Drops,21.57,98,Bottle,2113.86,Drops,Generic,bottle
+PHENYLPROPANOLAMINE SYRUP,Oral Liquids (Syrup/Suspension),24.59,88,Bottle,2163.92,Syrup,Generic,bottle
+AMOXICILLIN DROPS,Ophthalmic/Otic/Oral Drops,19,165,Bottle,3135,Drops,Generic,bottle
+AMOXICILLIN SUSP,Antibiotics,23.77,187,125mg,4444.99,Suspension,Generic,bottle
+AMOXICILLIN SUSP,Antibiotics,40.75,67,250mg,2730.25,Suspension,Generic,bottle
+CEFALEXIN DROPS,Ophthalmic/Otic/Oral Drops,18.38,58,Bottle,1066.04,Drops,Generic,bottle
+CEFALEXIN SUSP,Antibiotics,44.26,54,250mg/60ml,2390.04,Suspension,Generic,bottle
+CEFALEXIN SUSP,Antibiotics,37.7,83,125mg/60ml,3129.1,Suspension,Generic,bottle
+CONTRIMOXAZOLE SUSP,General Medicine / Others,31.2,55,200mg,1716,Suspension,Generic,bottle
+CONTRIMOXAZOLE SUSP,General Medicine / Others,29.76,70,400mg,2083.2,Suspension,Generic,bottle
+CEFUROXIME SUSP,Antibiotics,81.9,65,125mg,5323.5,Suspension,Generic,bottle
+CEFUROXIME SUSP,Antibiotics,105.3,68,250mg,7160.4,Suspension,Generic,bottle
+CETIRIZINE DROPS,Ophthalmic/Otic/Oral Drops,40.98,85,Bottle,3483.3,Drops,Generic,bottle
+CETIRIZINE SYRUP,Oral Liquids (Syrup/Suspension),41.25,79,Bottle,3258.75,Syrup,Generic,bottle
+METOCHLOPRAMIDE SYRUP,Oral Liquids (Syrup/Suspension),17.55,67,Bottle,1175.85,Syrup,Generic,bottle
+DICYCLOVERINE SYRUP,Oral Liquids (Syrup/Suspension),12.55,85,Bottle,1066.75,Syrup,Generic,bottle
+METRONIDAZOLE SYRUP,Oral Liquids (Syrup/Suspension),17.42,84,60ml,1463.28,Syrup,Generic,bottle
+PEDIALYTE,General Medicine / Others,114.39,55,Bottle,6291.45,Other,Generic,bottle
+PLEMEX KID SYRUP,Oral Liquids (Syrup/Suspension),137,25,60Ml,3425,Syrup,Generic,bottle
+PLEMEX ADULT SYRUP,Oral Liquids (Syrup/Suspension),120,24,60ml,2880,Syrup,Generic,bottle
+PLEMEX ADULT SYRUP,Oral Liquids (Syrup/Suspension),161,34,120ml,5474,Syrup,Generic,bottle
+ROBIKIDS SUSP,General Medicine / Others,94,26,60ml,2444,Suspension,Generic,bottle
+ALERKID DROPS,Ophthalmic/Otic/Oral Drops,149.11,28,Bottle,4175.08,Drops,Generic,bottle
+VENTOLIN INHALER,General Medicine / Others,405.4,26,inhaler,10540.4,Other,Generic,unit
+ASMALIN INHALER,General Medicine / Others,375.68,27,inhaler,10143.36,Other,Generic,unit
+SYMBICORD INHALER,General Medicine / Others,1231.6,27,inhaler,33253.2,Other,Generic,unit
+SERETIDE INHALER,General Medicine / Others,490.98,28,25/125mcg,13747.44,Other,Generic,unit
+DREXINE SPRAY PED,General Medicine / Others,182.31,28,Bottle,5104.68,Other,Generic,bottle
+DREXINE SPRAY ADULT,General Medicine / Others,201.75,29,Bottle,5850.75,Other,Generic,bottle
+NASONEX SPRAY,General Medicine / Others,482.32,29,Diskus,13987.28,Other,Generic,unit
+10CC SYRINGE,Medical Supplies & Equipment,3.4,85,Per pc,289,Other,Generic,pcs
+5CC SYRINGE,Medical Supplies & Equipment,6.8,80,Per pc,544,Other,Generic,pcs
+T SYRINGE,Medical Supplies & Equipment,6.8,83,Per pc,564.4,Other,Generic,pcs
+3CC SYRINGE,Medical Supplies & Equipment,6.8,86,Per pc,584.8,Other,Generic,pcs
+DIGITAL THERMOMETER,General Medicine / Others,75,56,Per pc,4200,Other,Generic,pcs
+NEBULIZER MACHINE,General Medicine / Others,880,19,Per pc,16720,Other,Generic,pcs
+SERETIDE DISKUS,General Medicine / Others,1362,12,Diskus/250,16344,Other,Generic,unit
+CLOBETASOL OINTMENT,General Medicine / Others,111.6,45,Tube,5022,Ointment,Generic,tube
+ECZACORT CREAM,General Medicine / Others,235.32,39,Tube,9177.48,Cream,Generic,tube
+DERMOVATE OITMENT,General Medicine / Others,295.96,31,Tube,9174.76,Ointment,Generic,tube
+QUADRATOPIC OINTMENT,General Medicine / Others,105,32,Tube,3360,Ointment,Generic,tube
+MUPICIN OINTMENT,General Medicine / Others,90,32,Tube,2880,Ointment,Generic,tube
+FLAMMAZINE CREAM,General Medicine / Others,295.93,34,20mg,10061.62,Cream,Generic,tube
+CONTRACTUBEX GEL,General Medicine / Others,541,32,Tube/10g,17312,Other,Generic,tube
+BACTROBAN OINTMENT,Antibiotics,283.29,33,Tube,9348.57,Ointment,Generic,tube
+TROSYD OINTMENT,General Medicine / Others,190.55,221,Tube,42111.55,Ointment,Generic,tube
+CANESTEN CREAM,General Medicine / Others,108.81,35,Tube,3808.35,Cream,Generic,tube
+NIZORAL CREAM,General Medicine / Others,194.37,28,Tube,5442.36,Cream,Generic,tube
+SALINASE DROPS,Ophthalmic/Otic/Oral Drops,78,26,Bottle,2028,Drops,Generic,bottle
+SINECOD SYR,General Medicine / Others,251.42,22,120ml,5531.24,Syrup,Generic,bottle
+RISEK,General Medicine / Others,32.45,25,Per pc/cap/20mg,811.25,Other,Generic,pcs
+CALMOSEPTINE OINTMENT,General Medicine / Others,32.4,58,Sachet,1879.2,Ointment,Generic,tube
+MX3 CAP,General Medicine / Others,15.12,25,Per pc/cap,378,Capsule,Generic,pcs
+MX3 COFFEE,General Medicine / Others,16,22,Per pc/ sachet,352,Other,Generic,pcs
+AMPALAYA CAP,General Medicine / Others,6.3,22,Per pc/cap,138.6,Capsule,Generic,pcs
+MEMORY PLUS CAP,General Medicine / Others,12.6,29,Per pc/cap,365.4,Capsule,Generic,pcs
+CENTRUM PLAIN 30’s,General Medicine / Others,263.15,22,Bottle,5789.3,Other,Generic,bottle
+BENCH 8,General Medicine / Others,115,25,100ml,2875,Other,Generic,unit
+BENCH 8,General Medicine / Others,88,22,75ml,1936,Other,Generic,unit
+ATLANTIS,General Medicine / Others,115,150,100ml,17250,Other,Generic,unit
+ATLANTIS,General Medicine / Others,88,125,75ml,11000,Other,Generic,unit
+BENCH B20,General Medicine / Others,115,135,100ml,15525,Other,Generic,unit
+BENCH B20,General Medicine / Others,88,32,75ml,2816,Other,Generic,unit
+I ROCK BENCH,General Medicine / Others,120,35,100ml,4200,Other,Generic,unit
+BABY BENCH COLOGNE,General Medicine / Others,92,30,200ml,2760,Other,Generic,unit
+BABY BENCH COLOGNE,General Medicine / Others,57,38,100ml,2166,Other,Generic,unit
+BABY BENCH COLOGNE,General Medicine / Others,36,37,50ml,1332,Other,Generic,unit
+REXONA MEN,General Medicine / Others,45.15,41,25ml,1851.15,Other,Generic,unit
+REXONA MEN,General Medicine / Others,82,48,50ml,3936,Other,Generic,unit
+REXONA WOMEN,General Medicine / Others,45.15,49,25ml,2212.35,Other,Generic,unit
+REXONA WOMEN,General Medicine / Others,80.15,42,50ml,3366.3,Other,Generic,unit
+AXE CHOCOLATE ROLL ON,General Medicine / Others,47.9,48,25ml,2299.2,Other,Generic,unit
+AXE CHOCOLATE ROLL ON,General Medicine / Others,105.1,47,40ml,4939.7,Other,Generic,unit
+AXE BODY SPRAY,General Medicine / Others,91.5,48,40ml,4392,Other,Generic,unit
+MYRA VITA WHITE LOTION,General Medicine / Others,52.17,34,50ml,1773.78,Other,Generic,unit
+MYRA VITA WHITE LOTION,General Medicine / Others,91.5,37,100ml,3385.5,Other,Generic,unit
+MYRA VITA WHITE LOTION,General Medicine / Others,156.52,38,200ml,5947.76,Other,Generic,unit
+MYRA MOISTURIZER LOTION,General Medicine / Others,32.18,26,50ml,836.68,Other,Generic,unit
+MYRA MOISTURIZER LOTION,General Medicine / Others,60.87,35,100ml,2130.45,Other,Generic,unit
+MYRA MOISTURIZER LOTION,General Medicine / Others,113.04,38,200nl,4295.52,Other,Generic,unit
+FIONA COLOGNE,General Medicine / Others,35.5,36,100ml,1278,Other,Generic,unit
+FIONA COLOGNE,General Medicine / Others,30.75,33,75ml,1014.75,Other,Generic,unit
+FIONA COLOGNE,General Medicine / Others,22.5,32,50ml,720,Other,Generic,unit
+FIONA COLOGNE,General Medicine / Others,13.5,45,25ml,607.5,Other,Generic,unit
+JUICY COLOGNE BLUE,General Medicine / Others,49.75,48,125ml,2388,Other,Generic,unit
+JUICY COLOGNE BLUE,General Medicine / Others,35.86,49,75ml,1757.14,Other,Generic,unit
+JUICY COLOGNE PINK,General Medicine / Others,49.75,25,125ml,1243.75,Other,Generic,unit
+JUICY COLOGNE PINK,General Medicine / Others,35.86,26,75ml,932.36,Other,Generic,unit
+JOHNSONS COLOGNE,General Medicine / Others,19.05,27,25ml,514.35,Other,Generic,unit
+JOHNSONS COLOGNE,General Medicine / Others,32.95,25,50ml,823.75,Other,Generic,unit
+JOHNSONS COLOGNE,General Medicine / Others,67.5,22,125ml,1485,Other,Generic,unit
+VASELINE TOTAL MOIST LOT,General Medicine / Others,105.6,25,100ml,2640,Other,Generic,unit
+VASELINE HEALTHY WHITE LOT.,General Medicine / Others,161.11,26,200ml,4188.86,Other,Generic,unit
+VASELINE HEALTHY WHITE LOT.,General Medicine / Others,101.36,26,100ml,2635.36,Other,Generic,unit
+VASELINE INSTANT FAIR LOTION,General Medicine / Others,67.45,28,100ml,1888.6,Other,Generic,unit
+VASELINE INSTANT FAIR LOTION,General Medicine / Others,123.85,25,200ml,3096.25,Other,Generic,unit
+DOVE ORIGINAL ROLL ON,General Medicine / Others,105.6,25,Bottle,2640,Other,Generic,bottle
+TAWAS UNSCENTED,General Medicine / Others,10.51,23,Per pc/jar,241.73,Other,Generic,pcs
+HEAD& SOULDER SHAMPOO,General Medicine / Others,128.72,20,170ml,2574.4,Other,Generic,unit
+HEAD& SOULDER SHAMPOO,General Medicine / Others,56.26,16,70ml,900.16,Other,Generic,unit
+SUNSILK SHAMPOO,General Medicine / Others,89.65,17,Bottle,1524.05,Other,Generic,bottle
+PALMOLIVE SHAMPOO PINK,General Medicine / Others,91.2,18,180ml,1641.6,Other,Generic,unit
+PALMOLIVE SHAMPOO GREEN,General Medicine / Others,91.2,21,180ml,1915.2,Other,Generic,unit
+MILCU POWDER,General Medicine / Others,43.65,18,40gm,785.7,Other,Generic,unit
+MILCU POWDER,General Medicine / Others,76.82,115,80gm,8834.3,Other,Generic,unit
+MILCU ROLL ON,General Medicine / Others,62.86,96,50ml,6034.56,Other,Generic,unit
+SAFEGUARD DEODORANT,General Medicine / Others,79.66,51,14g,4062.66,Other,Generic,unit
+SECRET DEODORANT,General Medicine / Others,64.5,61,Per pc,3934.5,Other,Generic,pcs
+HIGH ENDURANCE OLD SPICE,General Medicine / Others,79.66,51,14g,4062.66,Other,Generic,unit
+HIGH ENDURANCE OLD SPICE,General Medicine / Others,204.97,46,45g,9428.62,Other,Generic,unit
+MASTER CLEANSER (green),General Medicine / Others,43.15,15,70ml,647.25,Other,Generic,unit
+MASTER CLEANSER (green),General Medicine / Others,63.35,16,135ml,1013.6,Other,Generic,unit
+MASTER CLEANSER (green),General Medicine / Others,90.9,14,225ml,1272.6,Other,Generic,unit
+MASTER CLEANSER (blue),General Medicine / Others,43.15,25,70ml,1078.75,Other,Generic,unit
+MASTER CLEANSER (blue),General Medicine / Others,63.35,29,135ml,1837.15,Other,Generic,unit
+MASTER CLEANSER (blue),General Medicine / Others,90.9,27,225ml,2454.3,Other,Generic,unit
+MASTER CLEANSER (orange),General Medicine / Others,43.15,26,70ml,1121.9,Other,Generic,unit
+MASTER CLEANSER (orange),General Medicine / Others,63.35,22,135ml,1393.7,Other,Generic,unit
+MASTER CLEANSER (orange),General Medicine / Others,90.9,26,225ml,2363.4,Other,Generic,unit
+MASTER CLEANSER (white),General Medicine / Others,43.15,16,70ml,690.4,Other,Generic,unit
+MASTER CLEANSER (white),General Medicine / Others,63.35,17,135ml,1076.95,Other,Generic,unit
+MASTER CLEANSER (white),General Medicine / Others,90.9,19,225ml,1727.1,Other,Generic,unit
+MAXI PEEL CLEANSER GREEN,General Medicine / Others,39.25,16,135ml,628,Other,Generic,unit
+MAXI PEEL CLEANSER GREEN,General Medicine / Others,26,31,75ml,806,Other,Generic,unit
+SKINWHITE CLEANSER(pink),General Medicine / Others,41.25,21,135ml,866.25,Other,Generic,unit
+SKINWHITE CLEANSER(pink),General Medicine / Others,26.75,36,75ml,963,Other,Generic,unit
+SILKA ORANGE CLEANSER,General Medicine / Others,35.75,31,150ml,1108.25,Other,Generic,unit
+SILKA ORANGE CLEANSER,General Medicine / Others,22.75,32,75ml,728,Other,Generic,unit
+FLAWLESSLY YOU CLEANSER,General Medicine / Others,35,39,135ml,1365,Other,Generic,unit
+FLAWLESSLY YOU CLEANSER,General Medicine / Others,23.25,29,75ml,674.25,Other,Generic,unit
+RDL CLEANSER ORANGE,General Medicine / Others,21.8,32,75ml,697.6,Other,Generic,unit
+RDL CLEANSER ORANGE,General Medicine / Others,31.9,38,150ml,1212.2,Other,Generic,unit
+RDL CLEANSER CALAMANSI,General Medicine / Others,21.8,36,75ml,784.8,Other,Generic,unit
+RDL CLEANSER CALAMANSI,General Medicine / Others,31.9,39,150’ml,1244.1,Other,Generic,unit
+ESKINOL TEENS,General Medicine / Others,37.84,37,75ml,1400.08,Other,Generic,unit
+ESKINOL TEENS,General Medicine / Others,60.28,38,135ml,2290.64,Other,Generic,unit
+ESKINOL TEENS,General Medicine / Others,81.95,39,225ml,3196.05,Other,Generic,unit
+ESKINOL REGULAR,General Medicine / Others,37.84,35,75ml,1324.4,Other,Generic,unit
+ESKINOL REGULAR,General Medicine / Others,60.28,34,135ml,2049.52,Other,Generic,unit
+ESKINOL REGULAR,General Medicine / Others,91.49,33,225ml,3019.17,Other,Generic,unit
+MAXI-PEEL #3,General Medicine / Others,25.5,41,15ml,1045.5,Other,Generic,unit
+MAXI-PEEL #3,General Medicine / Others,37.25,42,30ml,1564.5,Other,Generic,unit
+MAXI-PEEL #3,General Medicine / Others,63,39,60ml,2457,Other,Generic,unit
+MAXI-PEEL #2,General Medicine / Others,23.25,39,15ml,906.75,Other,Generic,unit
+MAXI-PEEL #2,General Medicine / Others,25.01,38,30ml,950.38,Other,Generic,unit
+MAXI-PEEL #2,General Medicine / Others,58.75,34,60ml,1997.5,Other,Generic,unit
+MAXI-PEEL #1,General Medicine / Others,22,36,15ml,792,Other,Generic,unit
+MAXI-PEEL #1,General Medicine / Others,31.36,39,30ml,1223.04,Other,Generic,unit
+MAXI-PEEL #1,General Medicine / Others,54,32,60ml,1728,Other,Generic,unit
+RDL #3,General Medicine / Others,36.75,35,30ml,1286.25,Other,Generic,unit
+RDL #3,General Medicine / Others,58.75,33,60ml,1938.75,Other,Generic,unit
+RDL #2,General Medicine / Others,30.6,32,30ml,979.2,Other,Generic,unit
+RDL #2,General Medicine / Others,55.1,42,60ml,2314.2,Other,Generic,unit
+RDL #1,General Medicine / Others,29.35,43,30ml,1262.05,Other,Generic,unit
+RDL #1,General Medicine / Others,51.45,35,60ml,1800.75,Other,Generic,unit
+MAXI-PEEL ZERO,General Medicine / Others,69.45,25,Bottle,1736.25,Other,Generic,bottle
+SKIN WHITE FACE CREAM(white),General Medicine / Others,21.15,55,Per pc/sachet,1163.25,Cream,Generic,tube
+SKIN WHITE FACE CREAM(L.beige),General Medicine / Others,21.15,65,Per pc/sachet,1374.75,Cream,Generic,tube
+SKIN WHITE FACE CREAM(classic),General Medicine / Others,21.15,64,Per pc/sachet,1353.6,Cream,Generic,tube
+MYRA F. MOISTURIZER,General Medicine / Others,91.3,25,40ml,2282.5,Other,Generic,unit
+MYRA F. MOISTURIZER,General Medicine / Others,9.56,30,7ml,286.8,Other,Generic,unit
+MYRA VITA WHITE F.,General Medicine / Others,37.4,28,50ml,1047.2,Other,Generic,unit
+MYRA VITA WHITE F.,General Medicine / Others,9.56,55,Per pc/sachet,525.8,Other,Generic,pcs
+GARNIER CREAM,General Medicine / Others,14.05,52,Per pc/sachet,730.6,Cream,Generic,tube
+CHINCHUNSUE CREAM (PINK),General Medicine / Others,15.58,54,Per pc/sachet,841.32,Cream,Generic,tube
+CHINCHUNSUE CREAM (BLUE),General Medicine / Others,15.58,52,Per pc/sachet,810.16,Cream,Generic,tube
+BL CREAM,General Medicine / Others,34.25,51,Per pc/sachet,1746.75,Cream,Generic,tube
+MENA CREAM (PINK),General Medicine / Others,19.9,62,Per pc/sachet,1233.8,Cream,Generic,tube
+MENA CREAM (BLUE),General Medicine / Others,24.41,61,Per pc/sachet,1489.01,Cream,Generic,tube
+GILETTE (YELLOW),General Medicine / Others,17.84,65,Per pc/sachet,1159.6,Other,Generic,pcs
+GILETTE (BLUE),General Medicine / Others,20.27,65,Per pc/sachet,1317.55,Other,Generic,pcs
+OLAY CREAM NATURAL SACHET,General Medicine / Others,10.99,66,Per pc/sachet,725.34,Cream,Generic,tube
+OLAY CREAM NATURAL TUBE,General Medicine / Others,21.98,65,Per pc/sachet,1428.7,Cream,Generic,tube
+OLAY CREAM PINKISH SACHET,General Medicine / Others,13.19,68,Per pc/sachet,896.92,Cream,Generic,tube
+OLAY CREAM PINKISH TUBE,General Medicine / Others,21.98,68,Per pc/sachet,1494.64,Cream,Generic,tube
+MAXI-PEEL CONCEALING CREAM,General Medicine / Others,19.25,69,Per pc/sachet,1328.25,Cream,Generic,tube
+MAXI-PEEL SUNBLOCK,General Medicine / Others,26.4,15,15gm,396,Other,Generic,unit
+MAXI-PEEL SUNBLOCK,General Medicine / Others,14.6,15,8gm,219,Other,Generic,unit
+MAXI-PEEL MOIST. CREAM,General Medicine / Others,24.25,12,15gm,291,Cream,Generic,tube
+MAXI-PEEL MOIST. CREAM,General Medicine / Others,13,12,8gm,156,Cream,Generic,tube
+STYLEX SETTING LOTION,General Medicine / Others,39.5,11,250g,434.5,Other,Generic,unit
+STYLEX SETTING LOTION,General Medicine / Others,25.7,12,125g,308.4,Other,Generic,unit
+STYLING GEL,General Medicine / Others,25.5,11,125g,280.5,Other,Generic,unit
+STYLEX HAIR POLISH,General Medicine / Others,14.75,29,50g,427.75,Other,Generic,unit
+STYLEX HAIR POLISH,General Medicine / Others,43.5,12,100ml,522,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,24.75,29,30ml,717.75,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,80.75,29,50ml,2341.75,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,55.75,12,30ml,669,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,35.25,12,15ml,423,Other,Generic,unit
+NOVAS SOAP,General Medicine / Others,130.57,11,Per pc/box,1436.27,Other,Generic,box
+ERASUL SOAP,General Medicine / Others,81.8,10,Per pc/box,818,Other,Generic,box
+JOHNSON SOAP REG.,General Medicine / Others,38.95,10,150g,389.5,Other,Generic,unit
+JOHNSON SOAP REG.,General Medicine / Others,27.15,11,100g,298.65,Other,Generic,unit
+JOHNSON SOAP REG.,General Medicine / Others,15.5,12,60g,186,Other,Generic,unit
+JOHNSON SOAP MILK,Infant Care & Nutrition,43.2,11,150g,475.2,Other,Generic,unit
+JOHNSON SOAP MILK,Infant Care & Nutrition,30.8,28,100g,862.4,Other,Generic,unit
+JOHNSON SOAP MILK,Infant Care & Nutrition,15.5,26,60g,403,Other,Generic,unit
+JOHNSON SOAP BLOSSOMS,General Medicine / Others,43.2,24,150g,1036.8,Other,Generic,unit
+JOHNSON SOAP BLOSSOMS,General Medicine / Others,30.8,22,100g,677.6,Other,Generic,unit
+JOHNSON SOAP BLOSSOMS,General Medicine / Others,15.5,26,60g,403,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,16.84,29,60gm,488.36,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,27.93,15,85gm,418.95,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,38.31,19,135gm,727.89,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,23.3,11,90gm,256.3,Other,Generic,unit
+BIODERM SOAP,General Medicine / Others,35,15,135gm,525,Other,Generic,unit
+BIODERM SOAP,General Medicine / Others,34.6,19,125g,657.4,Other,Generic,unit
+FLAWLESSLY U SOAP,General Medicine / Others,13.9,15,65g,208.5,Other,Generic,unit
+FLAWLESSLY U SOAP,General Medicine / Others,27.75,14,90gm,388.5,Other,Generic,unit
+SILKA ORANGE SOAP,General Medicine / Others,13.9,17,65gm,236.3,Other,Generic,unit
+SILKA ORANGE SOAP,General Medicine / Others,34.75,15,135gm,521.25,Other,Generic,unit
+SILKA ORANGE SOAP,General Medicine / Others,34.1,26,80gm,886.6,Other,Generic,unit
+DR. WONGS SULFUR,General Medicine / Others,45,18,135gm,810,Other,Generic,unit
+DR. WONGS SULFUR,General Medicine / Others,73.3,22,135gm,1612.6,Other,Generic,unit
+LIKAS SOAP,General Medicine / Others,31.32,35,60g,1096.2,Other,Generic,unit
+LIKAS SOAP,General Medicine / Others,44.2,27,Per pc/box,1193.4,Other,Generic,box
+DOVE SOAP,General Medicine / Others,58.25,47,125g,2737.75,Other,Generic,unit
+MESTIZA SOAP,General Medicine / Others,30,42,Per pc/box,1260,Other,Generic,box
+TENDER CARE SOAP,General Medicine / Others,0,0,,0,Other,Generic,unit
+TENDER CARE SOAP PINK,General Medicine / Others,30,35,50gm,1050,Other,Generic,unit
+DR. WONG SULFUR MOIST,General Medicine / Others,48.81,22,135gm,1073.82,Other,Generic,unit
+DR. WONG SULFUR MOIST,General Medicine / Others,36.68,39,80gm,1430.52,Other,Generic,unit
+PLACENTA SOAP,General Medicine / Others,66,33,135gm,2178,Other,Generic,unit
+TOPGEL SOAP,General Medicine / Others,47,25,Per pc/box,1175,Other,Generic,box
+TENDER CARE POWDER,General Medicine / Others,30.3,29,100g,878.7,Other,Generic,unit
+TENDER CARE POWDER,General Medicine / Others,16.76,25,50g,419,Other,Generic,unit
+OILATUM BAR,General Medicine / Others,235.2,52,100g,12230.4,Other,Generic,unit
+OILATUM BAR,General Medicine / Others,158.4,32,100g,5068.8,Other,Generic,unit
+KATTALIS SOAP,General Medicine / Others,45.19,35,Per pc/box,1581.65,Other,Generic,box
+BL SOAP,General Medicine / Others,84,27,Per pc/box,2268,Other,Generic,box
+DR. KAUFMAN SOAP,General Medicine / Others,73.3,12,80gm,879.6,Other,Generic,unit
+C.Y. GABRIEL SOAP,General Medicine / Others,14.45,25,Per pc/box,361.25,Other,Generic,box
+VICKS,General Medicine / Others,86.47,17,25gm,1469.99,Other,Generic,unit
+VICKS,General Medicine / Others,144.92,52,50gm,7535.84,Other,Generic,unit
+VICKS,General Medicine / Others,45,42,10gm,1890,Other,Generic,unit
+VICKS BABY RUB,General Medicine / Others,25.36,37,5gm,938.32,Other,Generic,unit
+VICKS FORMULA 44,Infant Care & Nutrition,83.5,34,20g,2839,Other,Generic,unit
+VICKS FORMULA 44,Infant Care & Nutrition,147.75,35,100ml,5171.25,Other,Generic,unit
+PH CARE FEMININE WASH,General Medicine / Others,92,25,54ml,2300,Other,Generic,unit
+PH CARE FEMININE WASH,General Medicine / Others,48.6,20,50ml,972,Other,Generic,unit
+PH CARE FEMININE WASH,General Medicine / Others,118.23,19,150ml,2246.37,Other,Generic,unit
+BETADINE FEMININE WASH,General Medicine / Others,3.89,105,Per pc/sachet,408.45,Other,Generic,pcs
+BETADINE FEMININE WASH,General Medicine / Others,59.45,25,25ml,1486.25,Other,Generic,unit
+BETADINE FEMININE WASH,General Medicine / Others,106.09,22,50ml,2333.98,Other,Generic,unit
+GYNEPRO FEM. WASH,General Medicine / Others,172.54,21,100ml,3623.34,Other,Generic,unit
+GYNEPRO FEM. WASH,General Medicine / Others,67.39,27,60ml,1819.53,Other,Generic,unit
+LACTACYD BABY BATH,General Medicine / Others,151.37,22,150ml,3330.14,Other,Generic,unit
+LACTACYD BABY BATH,General Medicine / Others,78.21,22,60ml,1720.62,Other,Generic,unit
+LACTACYD FEMININE WASH,General Medicine / Others,161.37,17,150ml,2743.29,Other,Generic,unit
+LACTACYD FEMININE WASH,General Medicine / Others,238.59,26,250ml,6203.34,Other,Generic,unit
+LACTACYD FEMININE WASH,General Medicine / Others,65.34,29,60ml,1894.86,Other,Generic,unit
+CETAPHIL LOTION,General Medicine / Others,150.48,27,150ml,4062.96,Other,Generic,unit
+CETAPHIL LOTION,General Medicine / Others,202.95,25,250ml,5073.75,Other,Generic,unit
+CETAPHIL CLEANSER,General Medicine / Others,88,24,50ml,2112,Other,Generic,unit
+CETAPHIL CLEANSER,General Medicine / Others,195,25,118ml,4875,Other,Generic,unit
+CETAPHIL BABY DAILY LOTION,General Medicine / Others,113,26,60ml,2938,Other,Generic,unit
+CETAPHIL BABY DAILY LOTION,General Medicine / Others,88,19,Bottle/50ml,1672,Other,Generic,bottle
+CETAPHIL BAR REG.,General Medicine / Others,363,12,Bottle/400ml,4356,Other,Generic,bottle
+CETAPHIL BAR REG.,General Medicine / Others,445,15,Per pc/box,6675,Other,Generic,box
+MAXI-PEEL SUNBLOCK,General Medicine / Others,14.6,15,8gm,219,Other,Generic,unit
+MAXI-PEEL MOIST. CREAM,General Medicine / Others,24.25,12,15gm,291,Cream,Generic,tube
+MAXI-PEEL MOIST. CREAM,General Medicine / Others,13,12,8gm,156,Cream,Generic,tube
+STYLEX SETTING LOTION,General Medicine / Others,39.5,11,250g,434.5,Other,Generic,unit
+STYLEX SETTING LOTION,General Medicine / Others,25.7,12,125g,308.4,Other,Generic,unit
+STYLING GEL,General Medicine / Others,25.5,11,125g,280.5,Other,Generic,unit
+STYLING GEL,General Medicine / Others,14.75,29,50g,427.75,Other,Generic,unit
+STYLEX HAIR POLISH,General Medicine / Others,43.5,12,100ml,522,Other,Generic,unit
+STYLEX HAIR POLISH,General Medicine / Others,24.75,29,50ml,717.75,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,80.75,29,50ml,2341.75,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,55.75,12,30ml,669,Other,Generic,unit
+VITRESS OIL,General Medicine / Others,35.25,12,15ml,423,Other,Generic,unit
+NOVAS SOAP,General Medicine / Others,130.57,11,Per pc/box,1436.27,Other,Generic,box
+ERASUL SOAP,General Medicine / Others,81.8,10,Per pc/box,818,Other,Generic,box
+JOHNSON SOAP REG.,General Medicine / Others,38.95,10,150g,389.5,Other,Generic,unit
+JOHNSON SOAP REG.,General Medicine / Others,27.15,11,100g,298.65,Other,Generic,unit
+JOHNSON SOAP REG.,General Medicine / Others,15.5,12,60g,186,Other,Generic,unit
+JOHNSON SOAP MILK,Infant Care & Nutrition,43.2,11,150g,475.2,Other,Generic,unit
+JOHNSON SOAP MILK,Infant Care & Nutrition,30.8,28,100g,862.4,Other,Generic,unit
+JOHNSON SOAP MILK,Infant Care & Nutrition,15.5,26,60g,403,Other,Generic,unit
+JOHNSON SOAP BLOSSOMS,General Medicine / Others,43.2,24,150g,1036.8,Other,Generic,unit
+JOHNSON SOAP BLOSSOMS,General Medicine / Others,30.8,22,100g,677.6,Other,Generic,unit
+JOHNSON SOAP BLOSSOMS,General Medicine / Others,15.5,26,60g,403,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,16.84,29,60gm,488.36,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,27.93,15,85gm,418.95,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,38.31,19,135gm,727.89,Other,Generic,unit
+SAFEGUARD SOAP,General Medicine / Others,23.3,11,90gm,256.3,Other,Generic,unit
+BIODERM SOAP,General Medicine / Others,35,15,135gm,525,Other,Generic,unit
+BIODERM SOAP,General Medicine / Others,34.6,19,125g,657.4,Other,Generic,unit
+FLAWLESSLY U SOAP,General Medicine / Others,13.9,15,65g,208.5,Other,Generic,unit
+FLAWLESSLY U SOAP,General Medicine / Others,27.75,14,90gm,388.5,Other,Generic,unit
+SILKA ORANGE SOAP,General Medicine / Others,13.9,17,65gm,236.3,Other,Generic,unit
+SILKA ORANGE SOAP,General Medicine / Others,34.75,15,135gm,521.25,Other,Generic,unit
+SILKA ORANGE SOAP,General Medicine / Others,34.1,26,80gm,886.6,Other,Generic,unit
+DR. WONGS SULFUR,General Medicine / Others,45,18,135gm,810,Other,Generic,unit
+DR. WONGS SULFUR,General Medicine / Others,73.3,22,135gm,1612.6,Other,Generic,unit
+LIKAS SOAP,General Medicine / Others,31.32,35,60g,1096.2,Other,Generic,unit
+LIKAS SOAP,General Medicine / Others,44.2,27,Per pc/box,1193.4,Other,Generic,box
+DOVE SOAP,General Medicine / Others,58.25,47,125g,2737.75,Other,Generic,unit
+MESTIZA SOAP,General Medicine / Others,30,42,Per pc/box,1260,Other,Generic,box
+TENDER CARE SOAP PINK,General Medicine / Others,30,35,50gm,1050,Other,Generic,unit
+DR. WONG SULFUR MOIST,General Medicine / Others,48.81,22,135gm,1073.82,Other,Generic,unit
+DR. WONG SULFUR MOIST,General Medicine / Others,36.68,39,80gm,1430.52,Other,Generic,unit
+PLACENTA SOAP,General Medicine / Others,66,33,135gm,2178,Other,Generic,unit
+TOPGEL SOAP,General Medicine / Others,47,25,Per pc/box,1175,Other,Generic,box
+TENDER CARE POWDER,General Medicine / Others,30.3,29,100g,878.7,Other,Generic,unit
+TENDER CARE POWDER,General Medicine / Others,16.76,25,50g,419,Other,Generic,unit
+OILATUM BAR,General Medicine / Others,235.2,52,100g,12230.4,Other,Generic,unit
+OILATUM BAR,General Medicine / Others,158.4,32,50g,5068.8,Other,Generic,unit
+KATIALIS SOAP,General Medicine / Others,45.19,35,Per pc/box,1581.65,Other,Generic,box
+BL SOAP,General Medicine / Others,84,27,Per pc/box,2268,Other,Generic,box
+DR. KAUFMAN SOAP,General Medicine / Others,73.3,12,80gm,879.6,Other,Generic,unit
+C.Y. GABRIEL SOAP,General Medicine / Others,14.45,25,Per pc/box,361.25,Other,Generic,box
+VICKS,General Medicine / Others,86.47,17,25gm,1469.99,Other,Generic,unit
+VICKS,General Medicine / Others,144.92,52,50gm,7535.84,Other,Generic,unit
+VICKS,General Medicine / Others,45,42,10gm,1890,Other,Generic,unit
+VICKS,General Medicine / Others,25.36,37,5gm,938.32,Other,Generic,unit
+VICKS BABY RUB,General Medicine / Others,83.5,34,20g,2839,Other,Generic,unit
+VICKS FORMULA 44,Infant Care & Nutrition,147.75,35,100ml,5171.25,Other,Generic,unit
+VICKS FORMULA 44,Infant Care & Nutrition,92,25,54ml,2300,Other,Generic,unit
+PH CARE FEMININE WASH,General Medicine / Others,48.6,20,50ml,972,Other,Generic,unit
+PH CARE FEMININE WASH,General Medicine / Others,118.23,19,150ml,2246.37,Other,Generic,unit
+PH CARE FEMININE WASH,General Medicine / Others,3.89,105,Per pc/sachet,408.45,Other,Generic,pcs
+BETADINE FEMININE WASH,General Medicine / Others,59.45,25,25ml,1486.25,Other,Generic,unit
+BETADINE FEMININE WASH,General Medicine / Others,106.09,22,50ml,2333.98,Other,Generic,unit
+BETADINE FEMININE WASH,General Medicine / Others,172.54,21,100ml,3623.34,Other,Generic,unit
+GYNEPRO FEM.WASH,General Medicine / Others,67.39,27,60ml,1819.53,Other,Generic,unit
+GYNEPRO FEM.WASH,General Medicine / Others,151.37,22,150ml,3330.14,Other,Generic,unit
+LACTACYD BABY BATH,General Medicine / Others,78.21,22,60ml,1720.62,Other,Generic,unit
+LACTACYD BABY BATH,General Medicine / Others,161.37,17,150ml,2743.29,Other,Generic,unit
+LACTACYD BABY BATH,General Medicine / Others,238.59,26,250ml,6203.34,Other,Generic,unit
+LACTACYD FEMININE WASH,General Medicine / Others,65.34,29,60ml,1894.86,Other,Generic,unit
+LACTACYD FEMININE WASH,General Medicine / Others,150.48,27,150ml,4062.96,Other,Generic,unit
+LACTACYD FEMININE WASH,General Medicine / Others,202.95,25,250ml,5073.75,Other,Generic,unit
+CETAPHIL LOTION,General Medicine / Others,88,24,50ml,2112,Other,Generic,unit
+CETAPHIL CLEANSER,General Medicine / Others,195,25,118ml,4875,Other,Generic,unit
+CETAPHIL CLEANSER,General Medicine / Others,113,26,60ml,2938,Other,Generic,unit
+CETAPHIL BABY DAILY LOTION,General Medicine / Others,88,19,Bottle/50ml,1672,Other,Generic,bottle
+CETAPHIL BABY DAILY LOTION,General Medicine / Others,363,12,Bottle/400ml,4356,Other,Generic,bottle
+CETAPHIL BAR REG.,General Medicine / Others,445,15,Per pc/box,6675,Other,Generic,box
+CETAPHIL BAR ANTIBACTERIAL,Antibiotics,470,316,Per pc/box,148520,Other,Generic,box
+CALADRYL LOTION,General Medicine / Others,123.69,318,30ml,39333.42,Other,Generic,unit
+KWELL LOTION,General Medicine / Others,203.3,500,60ml,101650,Other,Generic,unit
+KWELL SHAMPOO,General Medicine / Others,108.9,29,30ml,3158.1,Other,Generic,unit
+KWELL SHAMPOO,General Medicine / Others,211.6,21,60ml,4443.6,Other,Generic,unit
+KWELL SHAMPOO,General Medicine / Others,33,25,sachet,825,Other,Generic,unit
+LINDELL LOTION,General Medicine / Others,126.48,29,30ml,3667.92,Other,Generic,unit
+LINDELL LOTION,General Medicine / Others,233.43,22,60ml,5135.46,Other,Generic,unit
+HYCLENS WOUND SPRAY,General Medicine / Others,300,22,Bottle,6600,Other,Generic,bottle
+HYCLENS GARGLE,General Medicine / Others,150,21,60ml,3150,Other,Generic,unit
+HYCLENS OB,General Medicine / Others,280,21,Bottle,5880,Other,Generic,bottle
+HYCLENS SOLUTION,General Medicine / Others,300,36,Bottle,10800,Other,Generic,bottle
+BEROCCA TAB,Oral Solids (Tablets/Capsules),439.92,38,24's,16716.96,Tablet,Generic,pcs
+BEROCCA TAB,Oral Solids (Tablets/Capsules),184.7,42,10's,7757.4,Tablet,Generic,pcs
+VIVALYTE,General Medicine / Others,11,36,Per pc/sachet,396,Other,Generic,pcs
+EYEMO RED,General Medicine / Others,89.99,38,Per pc/box,3419.62,Other,Generic,box
+EYEMO REFRESH,General Medicine / Others,98.99,42,Per pc/box,4157.58,Other,Generic,box
+BACTIDOL GARGLE,Antibiotics,327.2,35,250ml,11452,Other,Generic,unit
+BACTIDOL GARGLE,Antibiotics,100.95,36,60ml,3634.2,Other,Generic,unit
+BACTIDOL GARGLE,Antibiotics,177,65,120ml,11505,Other,Generic,unit
+BACTIDOL GARGLE,Antibiotics,544.5,36,500ml,19602,Other,Generic,unit
+BETADINE GARGLE,General Medicine / Others,94.48,53,60ml,5007.44,Other,Generic,unit
+BETADINE GARGLE,General Medicine / Others,161.3,50,120ml,8065,Other,Generic,unit
+LISTERINE TOTAL CARE,General Medicine / Others,144.6,46,200ml,6651.6,Other,Generic,unit
+LISTERINE TOTAL CARE,General Medicine / Others,85.45,53,100ml,4528.85,Other,Generic,unit
+LISTERINE FRESH BURST,General Medicine / Others,53.65,66,100ml,3540.9,Other,Generic,unit
+LISTERINE FRESH BURST,General Medicine / Others,107.95,66,200ml,7124.7,Other,Generic,unit
+LISTERINE COOL MINT,General Medicine / Others,53.65,85,100ml,4560.25,Other,Generic,unit
+LISTERINE COOL MINT,General Medicine / Others,107.95,75,200ml,8096.25,Other,Generic,unit
+LISTERINE ZERO,General Medicine / Others,85.45,75,100ml,6408.75,Other,Generic,unit
+DIFFLAM C GARGLE,General Medicine / Others,200,54,Bottle,10800,Other,Generic,bottle
+DIFFLAM C SOLUTION,General Medicine / Others,300,54,Bottle,16200,Other,Generic,bottle
+ORAHEX AF,General Medicine / Others,109.33,46,Bottle,5029.18,Other,Generic,bottle
+RM HEXITIDINE,General Medicine / Others,89,35,60ml,3115,Other,Generic,unit
+RM HEXITIDINE,General Medicine / Others,148,62,120ml,9176,Other,Generic,unit
+COLGATE PLAX,General Medicine / Others,50,38,60ml,1900,Other,Generic,unit
+COLGATE PLAX,General Medicine / Others,87.5,35,250ml,3062.5,Other,Generic,unit
+BETADINE SOLUTION,General Medicine / Others,51.96,62,15ml,3221.52,Other,Generic,unit
+BETADINE SOLUTION,General Medicine / Others,31.39,38,7.5ml,1192.82,Other,Generic,unit
+BETADINE SOLUTION,General Medicine / Others,123.12,55,60ml,6771.6,Other,Generic,unit
+VASELINE PETROLEUM JELLY,General Medicine / Others,57,48,50g,2736,Other,Generic,unit
+APOLLO PETROLEUM JELLY,General Medicine / Others,32.9,53,25g,1743.7,Other,Generic,unit
+APOLLO PETROLEUM JELLY,General Medicine / Others,52.4,96,50g,5030.4,Other,Generic,unit
+APOLLO PETROLEUM JELLY,General Medicine / Others,99.41,84,100gm,8350.44,Other,Generic,unit
+POLIDEN TABLET,Oral Solids (Tablets/Capsules),11.42,75,Per pc/sachet,856.5,Tablet,Generic,pcs
+POLIDEN CREAM,General Medicine / Others,119.31,75,20gm,8948.25,Cream,Generic,tube
+POLIDEN CREAM,General Medicine / Others,215.92,62,40gm,13387.04,Cream,Generic,tube
+POLIDEN CREAM,General Medicine / Others,287.6,70,60g,20132,Cream,Generic,tube
+COLGATE KIDDIE (BARBIE),General Medicine / Others,35,95,Tube,3325,Other,Generic,tube
+COLGATE KIDDIE (SPIDERMAN),General Medicine / Others,35,45,Tube,1575,Other,Generic,tube
+COLGATE KIDDIE (TIGER),General Medicine / Others,35,85,Tube,2975,Other,Generic,tube
+COLGATE REGULAR,General Medicine / Others,23,62,25ml,1426,Other,Generic,unit
+COLGATE REGULAR,General Medicine / Others,53,50,50ml,2650,Other,Generic,unit
+COLGATE REGULAR,General Medicine / Others,81,45,95ml,3645,Other,Generic,unit
+COLGATE REGULAR,General Medicine / Others,113.05,62,145 ml,7009.1,Other,Generic,unit
+COLGATE TRIPLE ACTION,General Medicine / Others,113.1,35,145 ml,3958.5,Other,Generic,unit
+COLGATE TRIPLE ACTION,General Medicine / Others,85.4,85,95ml,7259,Other,Generic,unit
+COLGATE TRIPLE ACTION,General Medicine / Others,52,65,50ml,3380,Other,Generic,unit
+COLGATE TRIPLE ACTION,General Medicine / Others,32.07,65,25ml,2084.55,Other,Generic,unit
+PYODONTYL TOOTHPASTE,General Medicine / Others,245.55,55,160g,13505.25,Other,Generic,unit
+PYODONTYL TOOTHPASTE,General Medicine / Others,201,62,100g,12462,Other,Generic,unit
+SENSODYNE ORIGINAL,General Medicine / Others,122.43,52,Tube,6366.36,Other,Generic,tube
+SENSODYNE RAPID RELIEF,General Medicine / Others,175.05,52,Tube,9102.6,Other,Generic,tube
+SENSODYNE F.IMPACT,General Medicine / Others,122.43,52,Tube,6366.36,Other,Generic,tube
+SENSODYNE F.MINT,General Medicine / Others,122.43,52,Tube,6366.36,Other,Generic,tube
+SENSODYNE GUMCARE,General Medicine / Others,127.43,52,Tube,6626.36,Other,Generic,tube
+VIRGIN COCONUT OIL,General Medicine / Others,112.5,42,Bottle,4725,Other,Generic,bottle
+FUNGISOL,General Medicine / Others,158,49,4ml,7742,Other,Generic,unit
+OFF LOTION FOR KIDS,General Medicine / Others,7.55,175,sachet,1321.25,Other,Generic,unit
+OFF LOTION FOR KIDS,General Medicine / Others,74.05,54,50ml,3998.7,Other,Generic,unit
+OFF LOTION FOR KIDS,General Medicine / Others,139.65,63,100ml,8797.95,Other,Generic,unit
+OFF LOTION OVERTIME,General Medicine / Others,7.55,185,sachet,1396.75,Other,Generic,unit
+OFF LOTION OVERTIME,General Medicine / Others,83.45,85,50ML,7093.25,Other,Generic,unit
+OFF LOTION OVERTIME,General Medicine / Others,148.05,62,100ML,9179.1,Other,Generic,unit
+PAU LINIMENT,General Medicine / Others,70.36,45,30ML,3166.2,Other,Generic,unit
+PAU LINIMENT,General Medicine / Others,115.47,46,60ml,5311.62,Other,Generic,unit
+BIGEN BLACK,General Medicine / Others,44.82,53,Bottle,2375.46,Other,Generic,bottle
+BIGEN D.BROWN,General Medicine / Others,44.82,85,Bottle,3809.7,Other,Generic,bottle
+BIGEN C.BROWN,General Medicine / Others,49.5,75,Bottle,3712.5,Other,Generic,bottle
+BIGEN B.BLACK,General Medicine / Others,44.82,79,Bottle,3540.78,Other,Generic,bottle
+NIZORAL SHAMPOO,General Medicine / Others,53.76,85,Per pc/Sachet,4569.6,Other,Generic,pcs
+LICEALIZ SHAMPOO,General Medicine / Others,13,85,10 ml,1105,Other,Generic,unit
+Hp LINIMENT,General Medicine / Others,180,27,60ml,4860,Other,Generic,unit
+Hp LINIMENT,General Medicine / Others,98,37,30ml,3626,Other,Generic,unit
+Hp LINIMENT,General Medicine / Others,52,32,15ml,1664,Other,Generic,unit
+FEEDING BOTTLE,General Medicine / Others,74.75,15,9oz,1121.25,Other,Generic,unit
+FEEDING BOTTLE,General Medicine / Others,70.25,22,4oz,1545.5,Other,Generic,unit
+FEEDING BOTTLE NURSER,General Medicine / Others,73.75,49,Per pc,3613.75,Other,Generic,pcs
+PACIFIER JELLY FILLED,General Medicine / Others,22.5,43,Per pc,967.5,Other,Generic,pcs
+NASAL ASPIRATOR,General Medicine / Others,78.5,45,Per pc,3532.5,Other,Generic,pcs
+BREAST PUMP (PLASTIC),General Medicine / Others,95,19,Bottle,1805,Other,Generic,bottle
+BREAST PUMP (GLASS),General Medicine / Others,151.75,15,Bottle,2276.25,Other,Generic,bottle
+NIPPLE (S),General Medicine / Others,23.75,52,Sachet,1235,Other,Generic,unit
+NIPPLE (M),General Medicine / Others,23.75,56,Per pc,1330,Other,Generic,pcs
+NIPPLE (L),General Medicine / Others,23.75,54,Per pc,1282.5,Other,Generic,pcs
+NESTOGEN CLASSIC,Infant Care & Nutrition,35.94,50,pouch,1797,Other,Generic,unit
+NESTOGEN 1,Infant Care & Nutrition,55.98,50,135gm,2799,Other,Generic,unit
+NESTOGEN 1,Infant Care & Nutrition,132.92,51,340g,6778.92,Other,Generic,unit
+NESTOGEN 1,Infant Care & Nutrition,529.86,27,1.3k,14306.22,Other,Generic,unit
+NESTOGEN 2,Infant Care & Nutrition,57.71,62,135gm,3578.02,Other,Generic,unit
+NESTOGEN 2,Infant Care & Nutrition,141.72,53,340g,7511.16,Other,Generic,unit
+NESTOGEN 2,Infant Care & Nutrition,525.69,46,1.3k,24181.74,Other,Generic,unit
+NESTOGEN 3,Infant Care & Nutrition,59.38,59,135gm,3503.42,Other,Generic,unit
+NESTOGEN 3,Infant Care & Nutrition,132.92,49,340g,6513.08,Other,Generic,unit
+NESTOGEN 3,Infant Care & Nutrition,499.83,53,1.3k,26490.99,Other,Generic,unit
+NESTOGEN LOW LACTOSE,Infant Care & Nutrition,199.2,52,box,10358.4,Other,Generic,box
+NIDO JR.,General Medicine / Others,80.94,48,180g,3885.12,Other,Generic,unit
+NIDO JR.,General Medicine / Others,145.19,86,400g,12486.34,Other,Generic,unit
+NIDO JR.,General Medicine / Others,337.95,62,750g,20952.9,Other,Generic,unit
+NIDO JR.,General Medicine / Others,514.86,46,1.2k,23683.56,Other,Generic,unit
+NIDO 5+,General Medicine / Others,238.1,53,370g,12619.3,Other,Generic,unit
+NIDO 3+,General Medicine / Others,179.41,65,370g,11661.65,Other,Generic,unit
+NIDO 3+,General Medicine / Others,327.1,53,700g,17336.3,Other,Generic,unit
+NIDO 3+,General Medicine / Others,509.01,42,1.2k,21378.42,Other,Generic,unit
+NIDO 3+,General Medicine / Others,666.72,80,1.6k,53337.6,Other,Generic,unit
+NIDO FORTIGROW,General Medicine / Others,157,73,370g,11461,Other,Generic,unit
+NIDO FORTIGROW,General Medicine / Others,700,60,700g,42000,Other,Generic,unit
+BEARBRAND MILK JUNIOR,Infant Care & Nutrition,338.02,55,1.2k,18591.1,Other,Generic,unit
+BEARBRAND MILK JUNIOR,Infant Care & Nutrition,157.71,32,420g,5046.72,Other,Generic,unit
+BEARBRAND MILK JUNIOR,Infant Care & Nutrition,337.95,43,750g,14531.85,Other,Generic,unit
+BEARBRAND MILK JUNIOR,Infant Care & Nutrition,507.35,62,1.6kg,31455.7,Other,Generic,unit
+BEARBRAND MILK,Infant Care & Nutrition,42.52,85,150g,3614.2,Other,Generic,unit
+BEARBRAND MILK,Infant Care & Nutrition,90.99,46,320g,4185.54,Other,Generic,unit
+BEARBRAND MILK,Infant Care & Nutrition,199.83,57,700g,11390.31,Other,Generic,unit
+BEARBRAND MILK,Infant Care & Nutrition,238.1,36,900g,8571.6,Other,Generic,unit
+BEARBRAND MILK,Infant Care & Nutrition,314.63,62,1.2k,19507.06,Other,Generic,unit
+BEARBRAND ADULT PLUS,General Medicine / Others,79.27,65,180g,5152.55,Other,Generic,unit
+BEARBRAND ADULT PLUS,General Medicine / Others,112.65,66,320g,7434.9,Other,Generic,unit
+BEARBRAND ADULT PLUS,General Medicine / Others,328.98,65,1kg,21383.7,Other,Generic,unit
+BEARBRAND ADULT PLUS,General Medicine / Others,374.67,66,1.2kg,24728.22,Other,Generic,unit
+BONNA,General Medicine / Others,676.99,58,1.2kg,39265.42,Other,Generic,unit
+BONNA,General Medicine / Others,86.79,51,150g,4426.29,Other,Generic,unit
+BONNA,General Medicine / Others,202.13,45,350g,9095.85,Other,Generic,unit
+BONAMIL,General Medicine / Others,86.79,50,150g,4339.5,Other,Generic,unit
+BONAMIL,General Medicine / Others,202.13,53,350g,10712.89,Other,Generic,unit
+BONAKID,General Medicine / Others,82.66,48,150g,3967.68,Other,Generic,unit
+BONAKID,General Medicine / Others,198.65,49,350g,9733.85,Other,Generic,unit
+LACTUM 1+,General Medicine / Others,89.74,57,150g,5115.18,Other,Generic,unit
+LACTUM 1+,General Medicine / Others,185.88,57,350g,10595.16,Other,Generic,unit
+LACTUM 1+,General Medicine / Others,522.01,57,900g,29754.57,Other,Generic,unit
+LACTUM 3+,General Medicine / Others,86.95,68,150g,5912.6,Other,Generic,unit
+LACTUM 3+,General Medicine / Others,181.9,60,350g,10914,Other,Generic,unit
+LACTUM 3+,General Medicine / Others,753.35,35,1.6k,26367.25,Other,Generic,unit
+LACTUM 0-6,General Medicine / Others,85.13,65,150g,5533.45,Other,Generic,unit
+LACTUM 0-6,General Medicine / Others,183.09,55,350g,10069.95,Other,Generic,unit
+LACTUM 0-6 CHOCO,General Medicine / Others,85.13,55,150g,4682.15,Other,Generic,unit
+LACTUM 0-6 CHOCO,General Medicine / Others,183.09,55,350g,10069.95,Other,Generic,unit
+LACTUM 6-12,General Medicine / Others,87.29,46,150g,4015.34,Other,Generic,unit
+LACTUM 6-12,General Medicine / Others,200.92,53,350g,10648.76,Other,Generic,unit
+LACTUM 6-12 CHOCO,General Medicine / Others,87.29,46,150g,4015.34,Other,Generic,unit
+LACTUM 6-13 CHOCO,General Medicine / Others,179.35,22,350g,3945.7,Other,Generic,unit
+ENFAMIL A+ ONE,Infant Care & Nutrition,553.6,15,350g,8304,Other,Generic,unit
+ENFAMIL A+ ONE,Infant Care & Nutrition,1703.01,27,1.2kg,45981.27,Other,Generic,unit
+ENFAMIL A+ TWO,Infant Care & Nutrition,549.69,17,450g,9344.73,Other,Generic,unit
+ENFAMIL A+ TWO,Infant Care & Nutrition,1393.25,12,1.2kg,16719,Other,Generic,unit
+ENFAMIL A+ TWO,Infant Care & Nutrition,507.31,15,350g,7609.65,Other,Generic,unit
+ENFAMIL A+ TWO PRO,Infant Care & Nutrition,1644.86,22,1.2kg,36186.92,Other,Generic,unit
+ENFAMIL LACTOSE FREE,Infant Care & Nutrition,696.25,19,450g,13228.75,Other,Generic,unit
+ENFAMIL LACTOSE FREE,Infant Care & Nutrition,549.69,13,350g,7145.97,Other,Generic,unit
+ENFAGROW A+ THREE,Infant Care & Nutrition,390.44,15,350g,5856.6,Other,Generic,unit
+SUSTAGEN PREMIUM MILK,Infant Care & Nutrition,570.94,19,350g,10847.86,Other,Generic,unit
+SUSTAGEN PREMIUM MILK,Infant Care & Nutrition,1366.02,15,900g,20490.3,Other,Generic,unit
+SUSTAGEN PREMIUM CHOCO,General Medicine / Others,1382.61,12,350g,16591.32,Other,Generic,unit
+SUSTAGEN PREMIUM CHOCO,General Medicine / Others,582.83,22,350g,12822.26,Other,Generic,unit
+ENFAMAMA CHOCO,Infant Care & Nutrition,331.3,15,Box,4969.5,Other,Generic,box
+ANMUM PLAIN,General Medicine / Others,381.07,21,375g,8002.47,Other,Generic,unit
+ANMUM CHOCO,General Medicine / Others,194.9,21,180g,4092.9,Other,Generic,unit
+ALASKA FORTIFIED,General Medicine / Others,41.08,15,150g,616.2,Other,Generic,unit
+ALASKA,General Medicine / Others,65.91,17,300g,1120.47,Other,Generic,unit
+ALASKA,General Medicine / Others,200.8,43,750g,8634.4,Other,Generic,unit
+ALASKA,General Medicine / Others,239.74,43,1.2kg,10308.82,Other,Generic,unit
+PEDIASURE PLUS 1-3 VAN.,General Medicine / Others,553.32,58,450g,32092.56,Other,Generic,unit
+PEDIASURE PLUS 1-3 VAN.,General Medicine / Others,1208.47,58,900g,70091.26,Other,Generic,unit
+PEDIASURE COMPLETE 3+,General Medicine / Others,560.64,62,450g,34759.68,Other,Generic,unit
+PEDIASURE COMPLETE 3+,General Medicine / Others,1251.77,35,900g,43811.95,Other,Generic,unit
+SIMILAC GAIN PLUS,Infant Care & Nutrition,1290.52,22,1.2kg,28391.44,Other,Generic,unit
+ENSURE GOLD MILK,Infant Care & Nutrition,822.77,15,400g,12341.55,Other,Generic,unit
+ENSURE GOLD MILK,Infant Care & Nutrition,293.78,27,150g,7932.06,Other,Generic,unit
+ENSURE GOLD MILK,Infant Care & Nutrition,1713.17,17,850g,29123.89,Other,Generic,unit
+ENSURE GOLD MILK,Infant Care & Nutrition,2328.44,12,1.2kg,27941.28,Other,Generic,unit
+ENSURE GOLD CHOCO,General Medicine / Others,822.77,15,400g,12341.55,Other,Generic,unit
+ENSURE GOLD CHOCO,General Medicine / Others,1713.77,22,850g,37702.94,Other,Generic,unit
+ABSOLUTE WATER,General Medicine / Others,72.66,19,6L,1380.54,Other,Generic,unit
+ABSOLUTE WATER,General Medicine / Others,35.16,13,2L,457.08,Other,Generic,unit
+ABSOLUTE WATER,General Medicine / Others,56.5,15,4L,847.5,Other,Generic,unit
+ABSOLUTE WATER,General Medicine / Others,21.83,19,1L,414.77,Other,Generic,unit
+ABSOLUTE WATER,General Medicine / Others,13.33,15,500ml,199.95,Other,Generic,unit
+ABSOLUTE WATER,General Medicine / Others,10,12,350ml,120,Other,Generic,unit
+GATORADE,General Medicine / Others,86.66,12,1.5L,1039.92,Other,Generic,unit
+GATORADE,General Medicine / Others,36.08,15,500ml,541.2,Other,Generic,unit
+D5 LRS 1L,General Medicine / Others,66,12,1L,792,Other,Generic,unit
+D5 0.3 NACL,General Medicine / Others,66,12,1L,792,Other,Generic,unit
+D5 0.9 NACL,General Medicine / Others,66,15,1L,990,Other,Generic,unit
+D5 WATER,General Medicine / Others,66,17,1L,1122,Other,Generic,unit
+PLRS,General Medicine / Others,66,46,1L,3036,Other,Generic,unit
+D5 IMB,General Medicine / Others,66,50,1L,3300,Other,Generic,unit
+DISPOSABLE GLOVES SMALL,Medical Supplies & Equipment,325,42,box,13650,Other,Generic,box
+DISPOSABLE GLOVES MEDIUM,Medical Supplies & Equipment,325,35,box,11375,Other,Generic,box
+DISPOSABLE GLOVES LARGE,Medical Supplies & Equipment,325,22,box,7150,Other,Generic,box
+DISPOSABLE FACE MASK,General Medicine / Others,75,15,box,1125,Other,Generic,box
+ACIETE MANZANILLA,General Medicine / Others,7.25,27,15ml,195.75,Other,Generic,unit
+ACIETE MANZANILLA,General Medicine / Others,11,37,30ml,407,Other,Generic,unit
+ACIETE MANZANILLA,General Medicine / Others,18.5,42,60ml,777,Other,Generic,unit
+ACIETE MANZANILLA,General Medicine / Others,35,35,120ml,1225,Other,Generic,unit
+AP-AP SOLUTION,General Medicine / Others,13.5,22,15ml,297,Other,Generic,unit
+AP-AP SOLUTION,General Medicine / Others,18,39,30ml,702,Other,Generic,unit
+AP-AP SOLUTION,General Medicine / Others,25.5,28,60ml,714,Other,Generic,unit
+EFFICASCENT OIL ES,General Medicine / Others,30.1,25,25ml,752.5,Other,Generic,unit
+EFFICASCENT OIL ES,General Medicine / Others,57.95,29,50ml,1680.55,Other,Generic,unit
+EFFICASCENT OIL ES,General Medicine / Others,105.8,25,100ml,2645,Other,Generic,unit
+AGUA OXINADA,General Medicine / Others,18,32,120ml,576,Other,Generic,unit
+AGUA OXINADA,General Medicine / Others,14,22,60ml,308,Other,Generic,unit
+PAMPERS COMFORT DRY x12-S,General Medicine / Others,138.94,25,Pack,3473.5,Other,Generic,pack
+PAMPERS COMFORT DRY x20 -NB,General Medicine / Others,132.24,32,Pack,4231.68,Other,Generic,pack
+PAMPERS COMFORT DRY x18-S,General Medicine / Others,138.94,22,Pack,3056.68,Other,Generic,pack
+PAMPERS COMFORT DRY x12-M,General Medicine / Others,147.57,25,Pack,3689.25,Other,Generic,pack
+PAMPERS COMFORT DRY x12-L,General Medicine / Others,141.21,27,Pack,3812.67,Other,Generic,pack
+PAMPERS COMFORT DRY x12-XL,General Medicine / Others,150.68,50,Pack,7534,Other,Generic,pack
+PAMPERS COMFORT DRY x10-XXL,General Medicine / Others,160.16,50,Pack,8008,Other,Generic,pack
+PAMPERS DRY x20 -NB,General Medicine / Others,132.24,50,Pack,6612,Other,Generic,pack
+PAMPERS DRY x30-L,General Medicine / Others,331.16,30,Pack,9934.8,Other,Generic,pack
+PAMPERS DRY x12-XL,General Medicine / Others,146.7,35,Pack,5134.5,Other,Generic,pack
+PAMPERS DRY x4-M,General Medicine / Others,35.06,42,Pack,1472.52,Other,Generic,pack
+PAMPERS DRY x4-L,General Medicine / Others,44.54,42,Pack,1870.68,Other,Generic,pack
+PAMPERS DRY x4-XL,General Medicine / Others,52.12,40,Pack,2084.8,Other,Generic,pack
+HAPPY PANTS DIAPER x24-M,General Medicine / Others,152.78,29,Pack,4430.62,Other,Generic,pack
+HAPPY PANTS DIAPER x24-L,General Medicine / Others,170.23,22,Pack,3745.06,Other,Generic,pack
+HAPPY PANTS DIAPER x24-xl,General Medicine / Others,186.28,15,Pack,2794.2,Other,Generic,pack
+HAPPY PANTS DIAPER x12-L,General Medicine / Others,85.43,27,Pack,2306.61,Other,Generic,pack
+HAPPY PANTS DIAPER x12-M,General Medicine / Others,76.89,17,Pack,1307.13,Other,Generic,pack
+HAPPY PANTS DIAPER x12-XL,General Medicine / Others,93.62,12,Pack,1123.44,Other,Generic,pack
+HAPPY PANTS DIAPER x4-M,General Medicine / Others,26.37,15,Pack,395.55,Other,Generic,pack
+HAPPY PANTS DIAPER x4-L,General Medicine / Others,29.24,22,Pack,643.28,Other,Generic,pack
+HAPPY PANTS DIAPER x4-XL,General Medicine / Others,31.93,19,Pack,606.67,Other,Generic,pack
+LAMPEIN DIAPER x42-NB,General Medicine / Others,214.75,13,Pack,2791.75,Other,Generic,pack
+LAMPEIN DIAPER x38-M,General Medicine / Others,214.75,15,Pack,3221.25,Other,Generic,pack
+LAMPEIN DIAPER x34-L,General Medicine / Others,209.03,19,Pack,3971.57,Other,Generic,pack
+LAMPEIN DIAPER x30-XL,General Medicine / Others,203,15,Pack,3045,Other,Generic,pack
+LAMPEIN DIAPER x26-XXL,General Medicine / Others,204.5,12,Pack,2454,Other,Generic,pack
+LAMPEIN DIAPER x12-S,General Medicine / Others,62.75,12,Pack,753,Other,Generic,pack
+LAMPEIN DIAPER x12-M,General Medicine / Others,69.75,15,Pack,1046.25,Other,Generic,pack
+LAMPEIN DIAPER x12-L,General Medicine / Others,76,12,Pack,912,Other,Generic,pack
+LAMPEIN DIAPER x12-XL,General Medicine / Others,96.75,12,Pack,1161,Other,Generic,pack
+LAMPEIN DIAPER x12-XXL,General Medicine / Others,96.75,15,Pack,1451.25,Other,Generic,pack
+LAMPEIN DIAPER x4-M,General Medicine / Others,24.5,17,Pack,416.5,Other,Generic,pack
+LAMPEIN DIAPER x4-L,General Medicine / Others,27.75,22,Pack,610.5,Other,Generic,pack
+LAMPEIN DIAPER x4-XL,General Medicine / Others,31.25,15,Pack,468.75,Other,Generic,pack
+LAMPEIN DIAPER x4-XXL,General Medicine / Others,32.25,27,Pack,870.75,Other,Generic,pack
+HAPPY DIAPER COLORED x12-S,General Medicine / Others,61.58,17,Pack,1046.86,Other,Generic,pack
+HAPPY DIAPER COLORED x12-M,General Medicine / Others,71.5,12,Pack,858,Other,Generic,pack
+HAPPY DIAPER COLORED x12-L,General Medicine / Others,81.39,15,Pack,1220.85,Other,Generic,pack
+HAPPY DIAPER COLORED x12-XL,General Medicine / Others,88.48,22,Pack,1946.56,Other,Generic,pack
+HAPPY DIAPER COLORED x4-S,General Medicine / Others,19.42,39,Pack,757.38,Other,Generic,pack
+HAPPY DIAPER COLORED x4-M,General Medicine / Others,22.6,33,Pack,745.8,Other,Generic,pack
+HAPPY DIAPER COLORED x4-L,General Medicine / Others,25.8,35,Pack,903,Other,Generic,pack
+HAPPY DIAPER COLORED x4-XL,General Medicine / Others,28.76,39,Pack,1121.64,Other,Generic,pack
+MODESS NON-WINGS x12,General Medicine / Others,48.9,35,Pack,1711.5,Other,Generic,pack
+MODESS W/WINGS x8,General Medicine / Others,36,32,Pack,1152,Other,Generic,pack
+MODESS NON-WINGS x8,General Medicine / Others,35.65,32,Pack,1140.8,Other,Generic,pack
+MODESS ALL NIGHT,General Medicine / Others,42.7,35,Pack,1494.5,Other,Generic,pack
+MODESS MATERNITY PADS,General Medicine / Others,91.4,32,Pack,2924.8,Other,Generic,pack
+THOSE DAYS BUDGET NON-WINGS,General Medicine / Others,11.33,32,Pack,362.56,Other,Generic,pack
+THOSE DAYS NON-WINGS x8,General Medicine / Others,10.38,35,Pack,363.3,Other,Generic,pack
+THOSE DAYS WINGS x8,General Medicine / Others,13.23,37,Pack,489.51,Other,Generic,pack
+WHISPER COTTONY WINGS x8,Medical Supplies & Equipment,35.82,22,Pack,788.04,Other,Generic,pack
+WHISPER COTTONY N-WINGS x8,Medical Supplies & Equipment,35.82,15,Pack,537.3,Other,Generic,pack
+WHISPER SULIT PACKx20,General Medicine / Others,87.3,27,Pack,2357.1,Other,Generic,pack
+SISTER GREEN N-WINGS x8,General Medicine / Others,16.25,17,Pack,276.25,Other,Generic,pack
+SISTER BLUE WINGS x8,General Medicine / Others,18.5,12,Pack,222,Other,Generic,pack
+SISTER PINK WINGS x8,General Medicine / Others,18.5,15,Pack,277.5,Other,Generic,pack
+SISTER VIOLET WINGS x8,General Medicine / Others,23.5,22,Pack,517,Other,Generic,pack
+SISTER VIOLET WINGS x4,General Medicine / Others,23.5,19,Pack,446.5,Other,Generic,pack
+SISTERS P-LINERS VIOLET x20,General Medicine / Others,16.25,13,Pack,211.25,Other,Generic,pack
+SISTERS P-LINERS BLUE x8,General Medicine / Others,9,15,Pack,135,Other,Generic,pack
+SISTERS P-LINERS BLUE x8,General Medicine / Others,9,19,Pack,171,Other,Generic,pack
+TOILY ROLL TISSUE x6,General Medicine / Others,50.9,15,Pack,763.5,Other,Generic,pack
+TOILY ROLL TISSUE SINGLE,General Medicine / Others,8.75,12,Pack/pc,105,Other,Generic,pack
+JOY ROLL TISSUE x12,General Medicine / Others,209.45,12,Pack/pc,2513.4,Other,Generic,pack
+JOY ROLL TISSUE SINGLE,General Medicine / Others,13.73,25,Pack/pc,343.25,Other,Generic,pack
+JOY ROLL POP-UP TISSUE,General Medicine / Others,7.66,32,Pack/pc,245.12,Other,Generic,pack
+CLEENE FACIAL TISSUE,General Medicine / Others,55.57,32,Pack/pc,1778.24,Other,Generic,pack
+FARLIN BABY WIPES 15 sheets,General Medicine / Others,18.95,35,Pack/pc,663.25,Other,Generic,pack
+FARLIN BABY WIPES 30 sheets,General Medicine / Others,40.85,32,Pack/pc,1307.2,Other,Generic,pack
+UNICARE BABY WIPES BLUE,General Medicine / Others,20,22,Pack/pc,440,Other,Generic,pack
+UNICARE BABY WIPES GREEN,General Medicine / Others,20,28,Pack/pc,560,Other,Generic,pack
+UNICARE BABY WIPES VIOLET,General Medicine / Others,20,27,Pack/pc,540,Other,Generic,pack
+HAPPY COTTON,Medical Supplies & Equipment,61.07,37,150g,2259.59,Other,Generic,unit
+HAPPY COTTON,Medical Supplies & Equipment,17.69,32,40gm,566.08,Other,Generic,unit
+HAPPY COTTON,Medical Supplies & Equipment,32.15,35,80gm,1125.25,Other,Generic,unit
+HAPPY COTTON BUDS 200'S,Medical Supplies & Equipment,14.4,32,Pack/pc,460.8,Other,Generic,pack
+PURITY COTTON,Medical Supplies & Equipment,5.14,39,10gm,200.46,Other,Generic,unit
+PURITY COTTON,Medical Supplies & Equipment,5.14,35,45g,179.9,Other,Generic,unit
+PURITY COTTON,Medical Supplies & Equipment,25.89,35,10gm,906.15,Other,Generic,unit
+PURITY COTTON,Medical Supplies & Equipment,48.61,39,90gm,1895.79,Other,Generic,unit
+PURITY COTTON BUDS 36's,Medical Supplies & Equipment,5.62,34,Pack,191.08,Other,Generic,pack
+PURITY COTTON BALL 30's,Medical Supplies & Equipment,12.7,32,Pack,406.4,Other,Generic,pack
+PURITY COTTON BALL 50's,Medical Supplies & Equipment,19.05,32,Pack,609.6,Other,Generic,pack
+EXTRA COTTON BALL 150's,Medical Supplies & Equipment,35.18,35,Pack,1231.3,Other,Generic,pack
+EXTRA COTTON BALL 50's,Medical Supplies & Equipment,13.07,21,Pack,274.47,Other,Generic,pack
+CASINO PINK ALCOHOL,Medical Supplies & Equipment,26.7,11,150ml,293.7,Other,Generic,unit
+CASINO PINK ALCOHOL,Medical Supplies & Equipment,36.8,15,250ml,552,Other,Generic,unit
+CASINO PINK ALCOHOL,Medical Supplies & Equipment,65.8,17,500ml,1118.6,Other,Generic,unit
+CASINO WHITE ALCOHOL,Medical Supplies & Equipment,25.65,22,150ml,564.3,Other,Generic,unit
+CASINO WHITE ALCOHOL,Medical Supplies & Equipment,35.5,15,250ml,532.5,Other,Generic,unit
+CASINO WHITE ALCOHOL,Medical Supplies & Equipment,63.35,27,500ml,1710.45,Other,Generic,unit
+GREEN CROSS ALCOHOL,Medical Supplies & Equipment,28.61,17,150ml,486.37,Other,Generic,unit
+GREEN CROSS ALCOHOL,Medical Supplies & Equipment,41.94,12,250ml,503.28,Other,Generic,unit
+GREEN CROSS ALCOHOL,Medical Supplies & Equipment,74.48,15,500ml,1117.2,Other,Generic,unit
+GREEN CROSS MOIST.,General Medicine / Others,29.41,22,150ml,647.02,Other,Generic,unit
+GREEN CROSS MOIST.,General Medicine / Others,43.13,19,250ml,819.47,Other,Generic,unit
+GREEN CROSS MOIST.,General Medicine / Others,76.43,13,500ml,993.59,Other,Generic,unit
+CLEEN ALCOHOL,Medical Supplies & Equipment,46.5,15,250ml,697.5,Other,Generic,unit
+CLEEN ALCOHOL,Medical Supplies & Equipment,78.5,19,500ml,1491.5,Other,Generic,unit
+BAND-AID ALCOHOL,Medical Supplies & Equipment,32.45,15,150ml,486.75,Other,Generic,unit
+BAND-AID ALCOHOL,Medical Supplies & Equipment,44.75,12,250ml,537,Other,Generic,unit
+BAND-AID ALCOHOL,Medical Supplies & Equipment,89.3,12,500ml,1071.6,Other,Generic,unit
+BAND-AID ALCOHOL,Medical Supplies & Equipment,22.65,15,60 ml,339.75,Other,Generic,unit
+ALCO+ ALCOHOL FAMILY,Medical Supplies & Equipment,42.78,11,250ml,470.58,Other,Generic,unit
+ALCO+ ALCOHOL,Medical Supplies & Equipment,72.5,12,500ml,870,Other,Generic,unit
+CARE AD DIAPER x10,General Medicine / Others,158.3,15,Pack,2374.5,Other,Generic,pack
+CARE AD DIAPER SINGLE,General Medicine / Others,17.2,17,Pack,292.4,Other,Generic,pack
+GRAND AD DIAPER x10,General Medicine / Others,170,22,Pack,3740,Other,Generic,pack
+UNDERPADS,General Medicine / Others,180,25,Pack/pc,4500,Other,Generic,pack
+EQ DIAPER x22-NB,General Medicine / Others,142.86,27,Pack,3857.22,Other,Generic,pack
+EQ DIAPER x32-L,General Medicine / Others,284.52,17,Pack,4836.84,Other,Generic,pack
+EQ DIAPER x24-XXL,General Medicine / Others,284.52,12,Pack,3414.24,Other,Generic,pack
+EQ DIAPER x16-L,General Medicine / Others,142.86,15,Pack,2142.9,Other,Generic,pack
+EQ DIAPER x4-NB,General Medicine / Others,27.39,22,Pack,602.58,Other,Generic,pack
+EQ DIAPER x4-M,General Medicine / Others,32.14,19,Pack,610.66,Other,Generic,pack
+EQ DIAPER x4-L,General Medicine / Others,35.95,13,Pack,467.35,Other,Generic,pack
+KOOL FEVER KIDS,General Medicine / Others,50.96,55,Per pc/sachet,2802.8,Other,Generic,pcs
+GAUZE BANDAGE 4*10,Medical Supplies & Equipment,48.88,85,Per pc,4154.8,Other,Generic,pcs
+SALONPAS PATCH 20's,General Medicine / Others,8.8,85,Per pc/sachet,748,Other,Generic,pcs
+KATINKO OINTMENT,General Medicine / Others,60.48,42,30g,2540.16,Ointment,Generic,tube
+CERELAC WITH BANANA,General Medicine / Others,51.02,12,120g,612.24,Other,Generic,unit
+CERELAC MIXED VEGETABLES,Oral Solids (Tablets/Capsules),51.02,15,120g,765.3,Other,Generic,unit
+CERELAC MIXED FRUITS,General Medicine / Others,51.02,12,120g,612.24,Other,Generic,unit
+CERELAC RICE & SOYA,General Medicine / Others,51.02,12,120g,612.24,Other,Generic,unit
+CERELAC WHEAT MILK,Infant Care & Nutrition,51.02,15,120g,765.3,Other,Generic,unit
+CERELAC BROWN RICE,General Medicine / Others,51.02,17,120g,867.34,Other,Generic,unit
+CERELAC CHICKEN VEG.,General Medicine / Others,51.02,22,120g,1122.44,Other,Generic,unit

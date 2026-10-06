@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ============================== -->
+    <!-- BASIC META TAGS                -->
+    <!-- ============================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#059669" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#047857" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ============================== -->
+    <!-- SEO & DESCRIPTION              -->
+    <!-- ============================== -->
+    <meta name="description" content="Five-L Pharmacy - Complete Inventory & POS Management System for modern pharmacies. Manage medicines, track stock, monitor expiry dates, and process sales efficiently." />
+    <meta name="keywords" content="pharmacy, inventory, POS, management, Five-L, medicine, healthcare, drugstore, prescription, sales" />
+    <meta name="author" content="Five-L Pharmacy" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://five-l-pharmacy.com" />
+
+    <!-- ============================== -->
+    <!-- OPEN GRAPH / SOCIAL MEDIA      -->
+    <!-- ============================== -->
+    <meta property="og:title" content="Five-L Pharmacy" />
+    <meta property="og:description" content="Complete Pharmacy Management System — Inventory, POS, Expiry Tracking & More." />
+    <meta property="og:image" content="https://five-l-pharmacy.com/Five.png?v=7" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Five-L Pharmacy Logo" />
+    <meta property="og:url" content="https://five-l-pharmacy.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Five-L Pharmacy" />
+    <meta property="og:locale" content="en_PH" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Five-L Pharmacy" />
+    <meta name="twitter:description" content="Complete Pharmacy Management System" />
+    <meta name="twitter:image" content="https://five-l-pharmacy.com/Five.png?v=7" />
+    <meta name="twitter:image:alt" content="Five-L Pharmacy Logo" />
+
+    <!-- ============================== -->
+    <!-- FAVICONS - Complete Set        -->
+    <!-- ============================== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/Five.png?v=7" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Five.png?v=7" />
+    <link rel="shortcut icon" type="image/png" href="/Five.png?v=7" />
+
+    <!-- Apple Touch Icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Five.png?v=7" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/Five.png?v=7" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/Five.png?v=7" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/Five.png?v=7" />
+    <link rel="apple-touch-icon" href="/Five.png?v=7" />
+
+    <!-- Android Chrome -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Windows 8+ -->
+    <meta name="msapplication-TileImage" content="/Five.png?v=7" />
+    <meta name="msapplication-TileColor" content="#059669" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <!-- ============================== -->
+    <!-- PRELOAD & PERFORMANCE          -->
+    <!-- ============================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- DNS Prefetch for common CDNs (optional, remove if not used) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- ============================== -->
+    <!-- TITLE                          -->
+    <!-- ============================== -->
+    <title>Five‑L Pharmacy — Inventory & POS Management System</title>
+
+    <!-- ============================== -->
+    <!-- STYLES                         -->
+    <!-- ============================== -->
+    <style>
+      /* ── Reset ────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      /* ── Base Typography ─────────── */
+      body {
+        background: #f8fafc;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-feature-settings: 'cv11', 'ss01';
+        text-rendering: optimizeLegibility;
+        transition: background-color 0.3s ease;
+      }
+
+      /* ── Root App Container ──────── */
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ── Custom Scrollbar ─────────── */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
+
+      /* ── Firefox scrollbar ────────── */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #94a3b8 #f1f5f9;
+      }
+
+      /* ── Focus visible ring ──────── */
+      :focus-visible {
+        outline: 2px solid #059669;
+        outline-offset: 2px;
+      }
+
+      /* ── Prevent FOUC ─────────────── */
+      #root:empty::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: #f8fafc;
+        z-index: -1;
+      }
+
+      /* ── Reduce motion ────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* ── Print styles ─────────────── */
+      @media print {
+        body {
+          background: #ffffff;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================== -->
+    <!-- NOSCRIPT FALLBACK              -->
+    <!-- ============================== -->
+    <noscript>
+      <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+        background: #f8fafc;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      ">
+        <div style="
+          max-width: 480px;
+          padding: 48px 40px;
+          background: #ffffff;
+          border-radius: 24px;
+          box-shadow: 0 20px 60px -20px rgba(0,0,0,0.15);
+          text-align: center;
+          border: 1px solid #e2e8f0;
+        ">
+          <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: #fef2f2;
+            border-radius: 50%;
+            border: 1px solid #fca5a5;
+          ">
+            <span style="font-size: 40px;">⚠️</span>
+          </div>
+          <h1 style="
+            margin: 0 0 12px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+          ">
+            JavaScript Required
+          </h1>
+          <p style="
+            margin: 0 0 24px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #64748b;
+            line-height: 1.6;
+          ">
+            Five‑L Pharmacy requires JavaScript to function properly.
+            Please enable JavaScript in your browser settings to continue.
+          </p>
+          <div style="
+            display: inline-block;
+            padding: 12px 24px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+          ">
+            Need help? <a href="https://enable-javascript.com/" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: none; font-weight: 700;">Enable JavaScript</a>
+          </div>
+        </div>
+      </div>
+    </noscript>
+
+    <!-- ============================== -->
+    <!-- ROOT APP MOUNT                 -->
+    <!-- ============================== -->
+    <div id="root"></div>
+
+    <!-- ============================== -->
+    <!-- ENTRY SCRIPT                   -->
+    <!-- ============================== -->
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

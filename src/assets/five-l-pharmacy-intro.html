@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Five-L Pharmacy</title>
+<style>
+  :root {
+    --green-dark: #0d3b26;
+    --gold: #d4af37;
+    --gold-light: #f5e08c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background:
+      radial-gradient(circle at 50% 36%, rgba(16, 185, 129, 0.18), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.08), transparent 50%),
+      linear-gradient(145deg, #071525 0%, #0b2230 52%, #063b3a 100%);
+    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #particles { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+
+  .stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .stage::before,
+  .stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .stage::before {
+    background: radial-gradient(circle at 50% 35%, rgba(16, 185, 129, 0.12), transparent 44%);
+  }
+  .stage::after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 22%, transparent 72%, rgba(0,0,0,0.3));
+  }
+
+  @keyframes fadeInSlow { to { opacity: 1; } }
+
+  /* ============================================
+     LOGO + BRAND BLOCK
+     ============================================ */
+  .logo-wrap {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 110px;
+  }
+
+  .logo-glow {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.3) rotate(-12deg);
+    animation: logoIn 1.4s cubic-bezier(.2, .9, .25, 1) 0.3s forwards;
+  }
+  .logo-glow::before {
+    content: "";
+    position: absolute;
+    inset: -35px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.4) 0%, rgba(212,175,55,0) 70%);
+    filter: blur(8px);
+    animation: pulseGlow 2.6s ease-in-out infinite 1.8s;
+  }
+  .logo-glow::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 2px solid rgba(212,175,55,0.15);
+    animation: ringPulse 3s ease-in-out infinite 2s;
+  }
+  .logo-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow:
+      0 0 0 6px rgba(255,255,255,0.06),
+      0 18px 50px rgba(0,0,0,0.55),
+      0 0 60px rgba(212,175,55,0.25);
+    z-index: 2;
+  }
+
+  @keyframes logoIn {
+    0%   { opacity: 0; transform: scale(0.3) rotate(-12deg); }
+    55%  { opacity: 1; transform: scale(1.1) rotate(3deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; }
+    50%      { opacity: 1; transform: scale(1.15); }
+  }
+  @keyframes ringPulse {
+    0%, 100% { opacity: 0.3; }
+    50%      { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  .shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .shine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(75deg, transparent, rgba(255,255,255,0.7), transparent);
+    transform: rotate(20deg);
+    animation: sweep 3s ease-in-out 1.9s 1;
+  }
+  @keyframes sweep {
+    0%   { left: -150%; }
+    100% { left: 150%; }
+  }
+
+  /* ============================================
+     BRAND TEXT
+     ============================================ */
+  .text-block {
+    text-align: center;
+    opacity: 0;
+    animation: textIn 1s ease 1.2s forwards;
+  }
+  @keyframes textIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .brand-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand-name {
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
+    line-height: 1.1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .brand-suffix {
+    background: linear-gradient(90deg, #eecd6a, #d4af37 30%, #f5e08c 50%, #d4af37 70%, #eecd6a);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    animation: shimmer 4s linear infinite 1.5s;
+  }
+  @keyframes shimmer {
+    to { background-position: -250% center; }
+  }
+
+  .brand-tagline {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    opacity: 0;
+    animation: textIn 1s ease 1.5s forwards;
+    line-height: 1;
+  }
+
+  .brand-tagline span:not(.dot) {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  transition: all 0.3s ease;
+}
+
+.brand-tagline span:not(.dot):hover {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+}
+
+  /* Dot separator sa gitna ng Health · Trust · Care */
+  .brand-tagline .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+    flex-shrink: 0;
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  .brand-tagline .dot:nth-of-type(1) { animation-delay: 0s; }
+  .brand-tagline .dot:nth-of-type(2) { animation-delay: 0.5s; }
+
+  @keyframes dotPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); box-shadow: 0 0 8px rgba(212, 175, 55, 0.5); }
+    50%      { opacity: 1; transform: scale(1.3); box-shadow: 0 0 15px rgba(212, 175, 55, 1); }
+  }
+
+  /* ============================================
+     LUXURY CREST BAR
+     ============================================ */
+  .crest-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeInSlow 0.9s ease 2.5s forwards;
+    z-index: 10;
+  }
+  .crest-side {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 1px;
+  }
+  .crest-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37);
+  }
+  .crest-side:last-child .crest-line {
+    background: linear-gradient(90deg, #d4af37, transparent);
+  }
+  .crest-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .crest-values {
+    position: relative;
+    height: 1.1em;
+    overflow: hidden;
+    min-width: 220px;
+  }
+  .crest-values span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.68rem;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: barWordCycle 16s cubic-bezier(.4, 0, .2, 1) infinite;
+  }
+  .crest-values span:nth-child(1) { animation-delay: 0s; }
+  .crest-values span:nth-child(2) { animation-delay: 4s; }
+  .crest-values span:nth-child(3) { animation-delay: 8s; }
+  .crest-values span:nth-child(4) { animation-delay: 12s; }
+  @keyframes barWordCycle {
+    0%   { opacity: 0; transform: translateY(100%); }
+    3%   { opacity: 1; transform: translateY(0); }
+    22%  { opacity: 1; transform: translateY(0); }
+    25%  { opacity: 0; transform: translateY(-100%); }
+    100% { opacity: 0; transform: translateY(-100%); }
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 480px) {
+    .logo-wrap { padding-bottom: 90px; gap: 20px; }
+    .logo-glow { width: 160px; height: 160px; }
+    .brand-name { font-size: 1.75rem; letter-spacing: 3px; }
+    .brand-tagline {
+      font-size: 0.6rem;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .brand-tagline span:not(.dot) {
+      padding: 4px 10px;
+      letter-spacing: 1.5px;
+      font-size: 0.55rem;
+    }
+    .brand-tagline .dot {
+      width: 4px;
+      height: 4px;
+    }
+    .crest-bar { gap: 12px; }
+    .crest-side { width: 35px; }
+    .crest-values { min-width: 160px; }
+    .crest-values span { font-size: 0.6rem; letter-spacing: 1.8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+    .logo-glow, .text-block, .crest-bar { opacity: 1; transform: none; }
+    .crest-bar { transform: translateX(-50%); }
+    .crest-values span { animation: none; opacity: 1; transform: none; }
+    .crest-values span:not(:first-child) { display: none; }
+  }
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<div class="stage">
+  <div class="logo-wrap">
+    <div class="logo-glow">
+      <div class="shine"></div>
+      <img src="/Five.png" alt="Five-L Pharmacy Logo" class="logo-img">
+    </div>
+
+    <div class="text-block">
+      <div class="brand-block">
+        <h1 class="brand-name">
+          Five-L <span class="brand-suffix">Pharmacy</span>
+        </h1>
+        <div class="brand-tagline">
+          <span>Health</span>
+          <span class="dot"></span>
+          <span>Trust</span>
+          <span class="dot"></span>
+          <span>Care</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="crest-bar">
+    <div class="crest-side">
+      <div class="crest-line"></div>
+    </div>
+    <div class="crest-center">
+      <div class="crest-values">
+        <span>Quality Medicines</span>
+        <span>Licensed Pharmacists</span>
+        <span>Affordable Prices</span>
+        <span>Trusted Care</span>
+      </div>
+    </div>
+    <div class="crest-side">
+      <div class="crest-line"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      const count = Math.min(Math.floor(w * h / 18000), 60);
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.8 + 0.5,
+        dx: (Math.random() - 0.5) * 0.3,
+        dy: (Math.random() - 0.5) * 0.3 - 0.15,
+        o: Math.random() * 0.4 + 0.1,
+        pulse: Math.random() * Math.PI * 2,
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        p.pulse += 0.015;
+
+        if (p.x < -10) p.x = w + 10;
+        if (p.x > w + 10) p.x = -10;
+        if (p.y < -10) p.y = h + 10;
+        if (p.y > h + 10) p.y = -10;
+
+        const alpha = p.o * (0.6 + 0.4 * Math.sin(p.pulse));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212, 175, 55, ${alpha})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    createParticles();
+    draw();
+
+    window.addEventListener('resize', () => {
+      resize();
+      createParticles();
+    });
+  })();
+</script>
+</body>
+</html>
