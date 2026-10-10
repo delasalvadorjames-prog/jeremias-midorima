@@ -14,20 +14,18 @@ import TransactionPage from './components/TransactionPage';
 import InventoryPanel from './components/InventoryPanel';
 import ProductPanel from './components/ProductPanel';
 import { SIDEBAR_TABS, STAFF_TAB_IDS, TOKEN_KEY, ROLE_KEY, ASSIGNED_CATEGORY_KEY, API_BASE } from './data/constants';
-import { AlertFilter, TabId, PharmacySettings, AuthMode, Medicine, PredictiveRow, ProductSaleEntry, ProductSaleItem, StaffCreatePayload, StaffMember, UserRole, AdminDashboardStats, AdminAlert, PriceUpdateRequest, DosageFormFilter, MedicineAuditLog, StaffPermissions } from './types';
-import { isNonMedicineProduct, summarizeInventoryStatus } from './lib/inventory';
-import { getFifoAvailableStock } from './lib/fifo';
+import { TabId, AlertFilter, PharmacySettings, AuthMode, Medicine, PredictiveRow, ProductSaleEntry, ProductSaleItem, StaffCreatePayload, StaffMember, UserRole, AdminDashboardStats, AdminAlert, PriceUpdateRequest, DosageFormFilter, MedicineAuditLog, StaffPermissions } from './types';
+import { summarizeInventoryStatus } from './lib/inventory';
+import { getFifoAvailableStock, getFifoAvailableSupplies } from './lib/fifo';
 import GoogleCallback from './pages/GoogleCallback';
 import StaffLogin from './pages/StaffLogin';
 import ProtectedStaffRoute from './ProtectedStaffRoute';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { CURRENT_ACCOUNT_EMAIL_KEY, createEmptyAccountState, loadAccountState, saveAccountState, normalizeAccountEmail } from './lib/accountStorage';
 import { GOOGLE_PENDING_SIGNUP_KEY } from './lib/googleAuth';
-import ProcessingModal from './components/ProcessingModalProfessional';
 import { formatPeso } from './lib/format';
-import { formatStrengthValue, isValidVolumeForDosageForm, normalizeVolumeForSave } from './lib/productAttributes';
 import FifoPanel from './components/FifoPanel';
-import { createTransaction, getTransactions } from './services/TransactionService';
+import { createTransaction } from './services/TransactionService';
 import { useFeedback } from './components/ui/feedback';
 import { loadStaffStatus, removeStaffAccess, saveStaffStatus, saveStaffPermissions, STAFF_ACCESS_CHANGED_EVENT } from './lib/staffPermissions';
 import { loadStaffActivityLogs, logStaffActivity, StaffActivityLog, STAFF_ACTIVITY_CHANGED_EVENT } from './lib/activityLog';
@@ -59,40 +57,29 @@ const detectDosageForm = (label: string = ''): string => {
   const normalized = (label || '').toLowerCase();
   if (/\b(tablet|tabs?)\b/.test(normalized)) return 'Tablet';
   if (/\b(capsule|cap(s)?)\b/.test(normalized)) return 'Capsule';
-  if (/\b(syrup|syr|syp)\b/.test(normalized)) return 'Syrup';
-  if (/\b(suspension|susp)\b/.test(normalized)) return 'Suspension';
-  if (/\b(injectable|injection|vial|ampule|amp|shot)\b/.test(normalized)) return 'Injectable';
+  if (/\b(syrup)\b/.test(normalized)) return 'Syrup';
+  if (/\b(suspension)\b/.test(normalized)) return 'Suspension';
+  if (/\b(injectable|injection|vial|ampule|shot)\b/.test(normalized)) return 'Injectable';
   if (/\b(cream)\b/.test(normalized)) return 'Cream';
-  if (/\b(ointment|oitment)\b/.test(normalized)) return 'Ointment';
+  if (/\b(ointment)\b/.test(normalized)) return 'Ointment';
   if (/\b(drops?)\b/.test(normalized)) return 'Drops';
-  return 'Other';
+  return 'Tablet';
 };
 
-const normalizeMedicine = (medicine: any): Medicine => {
-  const dosageForm = (['', 'medicine'].includes(String(medicine.dosage_form || medicine.dosageForm || '').trim().toLowerCase())
-    ? detectDosageForm(medicine.name || medicine.medicine_name || '')
-    : (medicine.dosage_form || medicine.dosageForm)).toString();
-  const isNonMedicineForm = ['Other', 'Medical Supply', 'Medical Device'].includes(dosageForm);
-
-  return {
-    ...medicine,
-    dosage_form: dosageForm,
-    // Legacy non-medicine records may contain a value such as "250ml" in
-    // the old strength field. Keep their volume, but never expose that value
-    // as a medicine strength.
-    strength: isNonMedicineForm ? undefined : medicine.strength,
-    classification: medicine.classification || 'Generic',
-    baseUnit: medicine.base_unit || medicine.baseUnit || 'pcs',
-    purchaseUnit: medicine.purchase_unit || medicine.purchaseUnit || medicine.unit_type || 'pcs',
-    conversionFactor: Math.max(1, Number(medicine.conversion_factor ?? medicine.conversionFactor) || 1),
-    unitType: medicine.unit_type || medicine.unitType || medicine.purchase_unit || 'pcs',
-    supplies: Array.isArray(medicine.supplies) ? medicine.supplies.map((supply: any) => ({
-      ...supply,
-      isArchived: Boolean(supply.is_archived ?? supply.isArchived),
-    })) : medicine.supplies,
-    isArchived: Boolean(medicine.is_archived ?? medicine.isArchived),
-  };
-};
+const normalizeMedicine = (medicine: any): Medicine => ({
+  ...medicine,
+  dosage_form: (medicine.dosage_form || medicine.dosageForm || detectDosageForm(medicine.name || medicine.medicine_name || '')).toString(),
+  classification: medicine.classification || 'Generic',
+  baseUnit: medicine.base_unit || medicine.baseUnit || 'pcs',
+  purchaseUnit: medicine.purchase_unit || medicine.purchaseUnit || medicine.unit_type || 'pcs',
+  conversionFactor: Math.max(1, Number(medicine.conversion_factor ?? medicine.conversionFactor) || 1),
+  unitType: medicine.unit_type || medicine.unitType || medicine.purchase_unit || 'pcs',
+  supplies: Array.isArray(medicine.supplies) ? medicine.supplies.map((supply: any) => ({
+    ...supply,
+    isArchived: Boolean(supply.is_archived ?? supply.isArchived),
+  })) : medicine.supplies,
+  isArchived: Boolean(medicine.is_archived ?? medicine.isArchived),
+});
 
 const normalizeUserRole = (role?: string | null): UserRole => role === 'admin' ? 'admin' : 'staff';
 const canAccessTab = (role: UserRole, tab: TabId) => role === 'admin' || STAFF_TAB_IDS.includes(tab);
@@ -103,11 +90,6 @@ const addDaysToDateInput = (dateInput: string, days: number) => {
   return date.toISOString().slice(0, 10);
 };
 
-const getShelfLifeForDosageForm = (dosageForm: string, settings: PharmacySettings) =>
-  isNonMedicineProduct({ dosage_form: dosageForm })
-    ? settings.nonMedicineShelfLifeDays
-    : settings.shelfLifeDays;
-
 const DEFAULT_SETTINGS: PharmacySettings = {
   pharmacyName: 'Five L Pharmacy',
   branchName: 'Main Branch',
@@ -116,15 +98,9 @@ const DEFAULT_SETTINGS: PharmacySettings = {
   contactNumber: '',
   contactEmail: '',
   operatingHours: '8:00 AM – 9:00 PM',
-  criticalStockAlertUnits: 5,
   lowStockAlertUnits: 20,
   shelfLifeDays: 365,
   expiryAlertDays: 30,
-  nonMedicineCriticalStockAlertUnits: 5,
-  nonMedicineLowStockAlertUnits: 10,
-  nonMedicineShelfLifeDays: 365,
-  nonMedicineExpiryAlertDays: 30,
-  nonMedicineExpiryNotifications: true,
   autoReorder: false,
   reorderLeadDays: 7,
   requireAdminOtp: true,
@@ -149,7 +125,6 @@ export default function App() {
   const [authLoading, setAuthLoading] = useState(false);
   const [hasAdmin, setHasAdmin] = useState<boolean | null>(null);
   const [canCreateAdmin, setCanCreateAdmin] = useState(false);
-  const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
 
   const [forgotStep, setForgotStep] = useState<'none' | 'request' | 'reset'>('none');
   const [forgotMessage, setForgotMessage] = useState('');
@@ -159,13 +134,10 @@ export default function App() {
   const [resetNewPassword, setResetNewPassword] = useState('');
   const [resetConfirmPassword, setResetConfirmPassword] = useState('');
 
-  // 👈 UPDATED: Idinagdag ang 'success' at 'processing' sa loginStep type
-  const [loginStep, setLoginStep] = useState<'credentials' | 'otp' | 'success' | 'processing'>('credentials');
+  const [loginStep, setLoginStep] = useState<'credentials' | 'otp'>('credentials');
   const [loginOtp, setLoginOtp] = useState('');
   const [otpError, setOtpError] = useState('');
   const [otpLoading, setOtpLoading] = useState(false);
-  const [showProcessingModal, setShowProcessingModal] = useState(false);
-  const pendingAuthDataRef = useRef<{ data: any; password: string } | null>(null);
 
   useEffect(() => {
     if (token) {
@@ -222,13 +194,13 @@ export default function App() {
   }, [location.search, token]);
 
   const [activeTab, setActiveTab] = useState<TabId>('dashboard');
+  const [alertFilter, setAlertFilter] = useState<AlertFilter>('all');
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth >= 768);
   const closeSidebarOnMobile = useCallback(() => {
     if (window.innerWidth < 768) setIsSidebarOpen(false);
   }, []);
   const [productTypeFilter, setProductTypeFilter] = useState<'all' | 'generic' | 'branded'>('all');
   const [dosageFormFilter, setDosageFormFilter] = useState<DosageFormFilter>('all');
-  const [alertFilter, setAlertFilter] = useState<AlertFilter>('all');
   const [currentUserEmail, setCurrentUserEmail] = useState<string>(
     () => localStorage.getItem(CURRENT_ACCOUNT_EMAIL_KEY) || localStorage.getItem('userEmail') || ''
   );
@@ -248,6 +220,7 @@ export default function App() {
     const stored = initialEmail ? loadAccountState(initialEmail, DEFAULT_SETTINGS) : createEmptyAccountState(DEFAULT_SETTINGS);
     return stored.medicines.map(normalizeMedicine);
   });
+  const [availableSuppliers, setAvailableSuppliers] = useState<string[]>([]);
   const [settings, setSettings] = useState<PharmacySettings>(() => {
     const initialEmail = localStorage.getItem(CURRENT_ACCOUNT_EMAIL_KEY) || localStorage.getItem('userEmail') || '';
     return initialEmail ? loadAccountState(initialEmail, DEFAULT_SETTINGS).settings : createEmptyAccountState(DEFAULT_SETTINGS).settings;
@@ -327,16 +300,6 @@ export default function App() {
     () => summarizeInventoryStatus(activeVisibleMedicines, settings),
     [settings, activeVisibleMedicines]
   );
-  // Archived medicines stay out of active inventory/POS, but expired records
-  // must remain visible in the Alerts center.
-  const alertInventoryOverview = useMemo(
-    () => summarizeInventoryStatus(visibleMedicines, settings),
-    [settings, visibleMedicines]
-  );
-  const alertVisibleMedicines = useMemo(() => {
-    const expiredIds = new Set(alertInventoryOverview.expired.map((medicine) => medicine.id));
-    return visibleMedicines.filter((medicine) => !medicine.isArchived || expiredIds.has(medicine.id));
-  }, [alertInventoryOverview.expired, visibleMedicines]);
   const staffPermissions = useMemo(() => {
     if (currentUserRole !== 'staff' || currentUserId === null) return null;
     return currentStaffPermissions;
@@ -390,21 +353,21 @@ export default function App() {
   const alertSummary = useMemo(() => {
     const alertIds = new Set<number>();
     [
-      ...alertInventoryOverview.lowStock,
-      ...alertInventoryOverview.criticalStock,
-      ...alertInventoryOverview.expiringSoon,
-      ...alertInventoryOverview.expired,
+      ...inventoryOverview.lowStock,
+      ...inventoryOverview.criticalStock,
+      ...inventoryOverview.expiringSoon,
+      ...inventoryOverview.expired,
     ].forEach((medicine) => alertIds.add(medicine.id));
 
     return {
       total: alertIds.size,
-      expired: alertInventoryOverview.counts.expired + alertInventoryOverview.counts.not_for_sale,
-      criticalStock: alertInventoryOverview.counts.critical_stock,
-      lowStock: alertInventoryOverview.counts.low_stock,
-      expiringSoon: alertInventoryOverview.counts.expiring_soon,
-      healthy: alertInventoryOverview.counts.healthy,
+      expired: inventoryOverview.counts.expired,
+      criticalStock: inventoryOverview.counts.critical_stock,
+      lowStock: inventoryOverview.counts.low_stock,
+      expiringSoon: inventoryOverview.counts.expiring_soon,
+      healthy: inventoryOverview.counts.healthy,
     };
-  }, [alertInventoryOverview]);
+  }, [inventoryOverview]);
 
 
 
@@ -560,7 +523,7 @@ export default function App() {
     setAccountReady(true);
   }, [token, currentUserEmail]);
 
-  // Verify the real role/assignment from the server on every page load.
+  // ✅ Verify the real role/assignment from the server on every page load.
   // This prevents stale localStorage data from showing the wrong view.
   useEffect(() => {
     if (!token) return;
@@ -636,90 +599,21 @@ export default function App() {
     }
   }, [token]);
 
-  // Insights must use the persisted transaction history, not only the
-  // browser's local sales cache. This keeps Burn Rate and Top Burn Rate
-  // accurate after refreshes, logins from another device, and older sales.
-  const fetchSalesHistory = useCallback(async () => {
+  const fetchSuppliers = useCallback(async () => {
     if (!token) return;
-
     try {
-      const pageSize = 500;
-      const transactions: Awaited<ReturnType<typeof getTransactions>> = [];
-      let page = 1;
-
-      while (page <= 20) {
-        const rows = await getTransactions(page, pageSize);
-        transactions.push(...rows);
-        if (rows.length < pageSize) break;
-        page += 1;
-      }
-
-      const grouped = new Map<string, ProductSaleEntry>();
-      transactions
-        .filter((transaction) => String(transaction.transaction_type || 'sale').toLowerCase() === 'sale')
-        .forEach((transaction) => {
-          const key = transaction.sale_reference || transaction.transaction_number;
-          const existing = grouped.get(key) || {
-            id: key,
-            units: 0,
-            total: 0,
-            timestamp: transaction.created_at,
-            items: [],
-          };
-
-          existing.units += Number(transaction.quantity) || 0;
-          existing.total += Number(transaction.net_sales ?? transaction.total_amount) || 0;
-          if (new Date(transaction.created_at).getTime() < new Date(existing.timestamp).getTime()) {
-            existing.timestamp = transaction.created_at;
-          }
-          existing.items = [
-            ...(existing.items || []),
-            {
-              medicineId: transaction.medicine_id,
-              quantity: Number(transaction.quantity) || 0,
-              unitPrice: Number(transaction.price) || 0,
-              grossUnitPrice: transaction.gross_amount != null
-                ? Number(transaction.gross_amount) / Math.max(1, Number(transaction.quantity) || 1)
-                : undefined,
-              discountAmount: Number(transaction.discount_amount) || 0,
-              customerType: transaction.customer_type === 'senior_citizen' || transaction.customer_type === 'pwd'
-                ? transaction.customer_type
-                : 'regular',
-              category: transaction.category || undefined,
-              classification: transaction.classification || undefined,
-              dosageForm: transaction.dosage_form || undefined,
-            },
-          ];
-          grouped.set(key, existing);
-        });
-
-      const persistedSales = Array.from(grouped.values());
-      setSalesTrend((localSales) => {
-        // Keep older locally stored months as well as backend transactions.
-        // Some historical sales were recorded before transaction syncing was
-        // enabled and are not present in the API yet.
-        const merged = [...persistedSales, ...localSales];
-        const seen = new Set<string>();
-        const unique = merged.filter((sale) => {
-          const itemSignature = (sale.items || [])
-            .map((item) => `${item.medicineId}:${item.quantity}`)
-            .sort()
-            .join('|');
-          const timestamp = new Date(sale.timestamp).getTime();
-          const key = `${timestamp}:${sale.units}:${itemSignature}`;
-          if (seen.has(key)) return false;
-          seen.add(key);
-          return true;
-        });
-
-        return unique.sort(
-          (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
-        );
+      const response = await fetch(`${API_BASE}/api/settings/suppliers`, {
+        headers: { Authorization: `Bearer ${token}` },
       });
-    } catch (error) {
-      // Keep the local cache as a fallback when the transaction endpoint is
-      // temporarily unavailable; the next refresh will retry the sync.
-      console.warn('Failed to load persisted sales history', error);
+      if (!response.ok) return;
+      const data = await response.json();
+      const names = (Array.isArray(data) ? data : [])
+        .filter((supplier: any) => supplier?.is_active !== false)
+        .map((supplier: any) => String(supplier?.name || '').trim())
+        .filter(Boolean);
+      setAvailableSuppliers(Array.from(new Set(names)).sort((a, b) => a.localeCompare(b)));
+    } catch (err) {
+      console.error('Failed to fetch suppliers', err);
     }
   }, [token]);
 
@@ -728,8 +622,8 @@ export default function App() {
   }, [fetchMedicines]);
 
   useEffect(() => {
-    void fetchSalesHistory();
-  }, [fetchSalesHistory]);
+    fetchSuppliers();
+  }, [fetchSuppliers]);
 
   const fetchAdminStats = useCallback(async () => {
     if (!token || currentUserRole !== 'admin') return;
@@ -808,7 +702,7 @@ export default function App() {
     }
   }, [token, fetchAdminStats]);
 
-  // Periodic polling every 5 seconds (Requirement 12)
+  // Periodic polling every 60 seconds
   useEffect(() => {
     if (!token || currentUserRole !== 'admin') return;
 
@@ -822,7 +716,7 @@ export default function App() {
       fetchAdminAlerts();
       fetchMedicineAuditLogs();
       loadAllCategories();
-    }, 5000);
+    }, 60000);
 
     return () => clearInterval(interval);
   }, [token, currentUserRole, fetchAdminStats, fetchAdminAlerts, fetchMedicineAuditLogs, loadAllCategories]);
@@ -836,17 +730,6 @@ export default function App() {
       const data = await res.json();
       const normalized = (data || []).map((row: PriceUpdateRequest) => ({
         ...row,
-        adjustment_type: (() => {
-          const raw = String(row.adjustment_type || '').trim().toLowerCase();
-          const aliases: Record<string, PriceUpdateRequest['adjustment_type']> = {
-            'count correction': 'count_correction',
-            'count-correction': 'count_correction',
-            countcorrection: 'count_correction',
-            damage: 'damages',
-            expire: 'expired',
-          };
-          return aliases[raw] || row.adjustment_type || (row.old_quantity != null || row.new_quantity != null ? 'count_correction' : null);
-        })(),
         medicine_name: row.medicine_name || `Supply #${row.inventory_id ?? row.id}`,
         requested_by: row.requested_by || row.updated_by || 'Staff',
         current_price: Number(row.current_price ?? row.old_price ?? 0),
@@ -920,7 +803,7 @@ export default function App() {
       const updated = await res.json();
       notify({ 
         type: 'success', 
-        title: `Request ${action === 'approve' ? 'Approved' : 'Rejected'}`, 
+        title: `Request ${action === 'approve' ? 'Approved ✓' : 'Rejected ✓'}`, 
         message: `Price request #${updated.id} has been ${updated.status || action === 'approve' ? 'approved' : 'rejected'}` 
       });
       
@@ -928,7 +811,6 @@ export default function App() {
       console.log('[Price Request] Refreshing data...');
       await Promise.all([
         fetchMedicines(),
-        fetchPriceUpdateRequests(),
         fetchMedicineAuditLogs(),
         fetchAdminStats()
       ]);
@@ -949,7 +831,7 @@ export default function App() {
     const startPolling = () => {
       if (!token || currentUserRole !== 'admin') return;
       fetchPriceUpdateRequests();
-      pollId = setInterval(() => fetchPriceUpdateRequests(), 5000);
+      pollId = setInterval(() => fetchPriceUpdateRequests(), 180000);
     };
     startPolling();
     return () => { if (pollId) clearInterval(pollId); };
@@ -1063,7 +945,7 @@ export default function App() {
       });
     }
 
-    // Clear everything related to the user.
+    // ❗ CLEAR EVERYTHING RELATED TO USER
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem('token');
     localStorage.removeItem(CURRENT_ACCOUNT_EMAIL_KEY);
@@ -1097,10 +979,6 @@ export default function App() {
     setAccountReady(false);
     navigate(redirectPath, { replace: true });
   }, [currentUserEmail, currentUserId, currentUserName, currentUserRole, navigate]);
-
-  const requestLogout = useCallback(() => {
-    setLogoutConfirmOpen(true);
-  }, []);
 
   useEffect(() => {
     if (!token || currentUserRole !== 'staff' || currentUserId === null || currentStaffStatus === 'active') return;
@@ -1141,23 +1019,8 @@ export default function App() {
   }, []);
 
   const availableInventoryCategories = useMemo(() => {
-    const categories = new Set<string>();
-    
-    // Add all database categories
-    allDatabaseCategories.forEach(cat => categories.add(cat));
-    
-    // Add categories from medicines
-    medicines.forEach(m => categories.add(m.category));
-    
-    // Add categories from staff
-    staffMembers.forEach(s => {
-      if (s.assigned_category) {
-        s.assigned_category.split(',').forEach(c => categories.add(c.trim()));
-      }
-    });
-    
-    return Array.from(categories).filter(Boolean).sort();
-  }, [medicines, staffMembers, allDatabaseCategories]);
+    return Array.from(new Set(allDatabaseCategories.filter(Boolean))).sort();
+  }, [allDatabaseCategories]);
 
   const handleAssignStaffCategory = useCallback(async (staffId: number, category: string) => {
     const assignedCategory = category.trim();
@@ -1303,6 +1166,31 @@ export default function App() {
       setSavingStaffId(null);
     }
   }, [currentUserEmail, currentUserName, notify, token]);
+
+  const handleResetStaffPassword = useCallback(async (staffId: number, newPassword: string) => {
+    if (!token) throw new Error('You must be signed in as an administrator.');
+
+    const response = await fetch(`${API_BASE}/staff/${staffId}/password`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ new_password: newPassword }),
+    });
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      throw new Error(data.detail || 'Failed to reset staff password');
+    }
+
+    setStaffMembers((current) => current.map((staff) => (staff.id === staffId ? data : staff)));
+    notify({
+      type: 'success',
+      title: 'Password reset successful',
+      message: 'The staff member can now sign in using the new temporary password.',
+    });
+  }, [notify, token]);
 
   const handleCreateStaff = useCallback(async (payload: StaffCreatePayload) => {
     const fullName = payload.full_name.trim();
@@ -1556,14 +1444,7 @@ export default function App() {
         setOtpError('');
         setLoginOtp('');
       } else {
-        // Show the same processing modal for password-only and OTP logins.
-        setAuthLoading(false);
-        setLoginStep('success');
-
-        setTimeout(() => {
-          pendingAuthDataRef.current = { data, password };
-          setShowProcessingModal(true);
-        }, 900);
+        activateAuthenticatedSession(data, password);
       }
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Login failed';
@@ -1573,7 +1454,6 @@ export default function App() {
     }
   }, [activateAuthenticatedSession, authMode, confirmPassword, email, fullName, password, settings.requireAdminOtp]);
 
-  // Verify the OTP first, then let ProcessingModal finish before activating the session.
   const handleVerifyOtp = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!loginOtp.trim()) {
@@ -1600,19 +1480,14 @@ export default function App() {
         throw new Error(data.detail || 'Invalid verification code');
       }
 
-      // 👈 HUWAG i-activate agad — i-save muna ang data
-      setOtpLoading(false);
-      pendingAuthDataRef.current = { data, password };
-      
-      // 👈 Ipakita ang ProcessingModal
-      setShowProcessingModal(true);
-
+      activateAuthenticatedSession(data, password);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Verification failed';
       setOtpError(message);
+    } finally {
       setOtpLoading(false);
     }
-  }, [email, password, loginOtp]);
+  }, [activateAuthenticatedSession, email, password, loginOtp]);
 
   const handleForgotRequest = useCallback(async () => {
     const normalizedEmail = normalizeAccountEmail(email);
@@ -1785,29 +1660,6 @@ export default function App() {
     setSavingMedicineId(id);
 
     try {
-      const originalStock = medicineEditSnapshot?.stock ?? target.stock;
-      const stockChangeRequested = currentUserRole === 'staff' && target.stock !== originalStock;
-      const latestSupply = [...(target.supplies || [])].sort((a, b) => b.id - a.id)[0];
-
-      // Submit staff stock edits through the approval queue first. The normal
-      // medicine update below keeps the live stock at its original value.
-      if (stockChangeRequested) {
-        if (!latestSupply) throw new Error('No supply batch is available for admin approval.');
-        const requestResponse = await fetch(`${API_BASE}/supplies/${latestSupply.id}`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-          body: JSON.stringify({
-            quantity: target.stock,
-            adjustment_type: 'count_correction',
-            reason: 'Count correction submitted from medicine edit',
-          }),
-        });
-        if (!requestResponse.ok) {
-          const requestError = await requestResponse.json().catch(() => ({}));
-          throw new Error(requestError.detail || 'Failed to submit count correction for approval');
-        }
-      }
-
       const response = await fetch(`${API_BASE}/medicines/${id}`, {
         method: 'PUT',
         headers: {
@@ -1817,7 +1669,7 @@ export default function App() {
         body: JSON.stringify({
           name: target.name.trim(),
           category: target.category.trim(),
-          stock: stockChangeRequested ? originalStock : target.stock,
+          stock: target.stock,
           reorder_level: target.reorderLevel,
           expiry: target.expiry,
           avg_daily_sales: target.avgDailySales,
@@ -1842,13 +1694,7 @@ export default function App() {
       setMedicines((prev) =>
         prev.map((medicine) => (medicine.id === id ? updated : medicine))
       );
-      if (stockChangeRequested) {
-        notify({
-          type: 'info',
-          title: 'Pending Admin Approval',
-          message: 'Count correction submitted. Inventory will change only after admin approval.',
-        });
-      } else if (currentUserRole === 'staff' && currentUserId !== null) {
+      if (currentUserRole === 'staff' && currentUserId !== null) {
         logStaffActivity({
           staffId: currentUserId,
           staffName: currentUserName || currentUserEmail || 'Staff',
@@ -1864,7 +1710,7 @@ export default function App() {
     } finally {
       setSavingMedicineId(null);
     }
-  }, [currentUserAssignedCategory, currentUserEmail, currentUserId, currentUserName, currentUserRole, medicines, medicineEditSnapshot, notify, token]);
+  }, [currentUserAssignedCategory, currentUserEmail, currentUserId, currentUserName, currentUserRole, medicines, token]);
 
   const handleNewItemChange = useCallback((field: string, value: string) => {
     // Staff can now select from their assigned categories (or any if allowed by UI)
@@ -1872,28 +1718,25 @@ export default function App() {
 
     setAddItemError('');
     if (field === 'receivedDate') {
-      autoGeneratedExpiryRef.current = addDaysToDateInput(value, getShelfLifeForDosageForm(newItem.dosageForm, settings));
+      autoGeneratedExpiryRef.current = addDaysToDateInput(value, settings.shelfLifeDays);
     }
     setNewItem(prev => ({
       ...prev,
       [field]: value,
-      ...(field === 'receivedDate' ? { expiry: addDaysToDateInput(value, getShelfLifeForDosageForm(newItem.dosageForm, settings)) } : {}),
+      ...(field === 'receivedDate' ? { expiry: addDaysToDateInput(value, settings.shelfLifeDays) } : {}),
     }));
-  }, [newItem.dosageForm, settings]);
+  }, [settings.shelfLifeDays]);
 
   useEffect(() => {
     if (!isAddingMode || !newItem.receivedDate) return;
-    const calculatedExpiry = addDaysToDateInput(
-      newItem.receivedDate,
-      getShelfLifeForDosageForm(newItem.dosageForm, settings),
-    );
+    const calculatedExpiry = addDaysToDateInput(newItem.receivedDate, settings.shelfLifeDays);
     setNewItem((current) => {
       // Keep Shelf Life as the default, but never overwrite an admin-edited date.
       if (current.expiry !== autoGeneratedExpiryRef.current) return current;
       autoGeneratedExpiryRef.current = calculatedExpiry;
       return current.expiry === calculatedExpiry ? current : { ...current, expiry: calculatedExpiry };
     });
-  }, [isAddingMode, newItem.dosageForm, newItem.receivedDate, settings]);
+  }, [isAddingMode, newItem.receivedDate, settings.shelfLifeDays]);
 
   const handleAddItem = useCallback(async () => {
     const name = newItem.name.trim();
@@ -1903,52 +1746,14 @@ export default function App() {
       : newItem.category).trim();
     const expiry = newItem.expiry;
     const dosageForm = newItem.dosageForm || '';
-    const isNonMedicineForm = ['Other', 'Others', 'Medical Supply', 'Medical Device'].includes(dosageForm);
-    // Never persist legacy or accidentally typed dosage values for
-    // non-medicine products such as water and supplies.
-    const strength = isNonMedicineForm ? '' : formatStrengthValue(newItem.strength);
-    const rawVolume = newItem.volume.trim();
-    const volumeIsValid = isValidVolumeForDosageForm(rawVolume, dosageForm);
-    const volume = normalizeVolumeForSave(rawVolume, dosageForm);
-    const strengthRequired = !isNonMedicineForm;
-    const volumeRequired = ['Syrup', 'Suspension', 'Injectable', 'Drops'].includes(dosageForm);
-    const dosageValue = strength || volume;
-    const normalizeVariantValue = (value: string) => value.replace(/\s+/g, '').toLowerCase();
-    const baseNameOf = (value: string) => value
-      .replace(/\s+-\s+\d+(?:\.\d+)?\s*(?:ml|mL|ML|mg|MG|g|G|l|L)\b.*$/i, '')
-      .replace(/\s+\d+(?:\.\d+)?\s*(?:ml|mL|ML|mg|MG|g|G|l|L)\b.*$/i, '')
-      .trim()
-      .toLowerCase();
-    const variantOf = (medicine: Medicine) => [
-      medicine.strength?.trim(),
-      medicine.volume?.trim(),
-    ].filter(Boolean).join('|') || medicine.name.match(/\d+(?:\.\d+)?\s*(?:ml|mL|ML|mg|MG|g|G)/i)?.[0] || '';
-    const newVariantValue = [strength, volume].filter(Boolean).join('|');
-    const existingVariant = medicines.some((medicine) =>
-      !medicine.isArchived &&
-      baseNameOf(medicine.medicine_name || medicine.name) === baseNameOf(name) &&
-      (medicine.dosage_form || '').toLowerCase() === dosageForm.toLowerCase() &&
-      (medicine.classification || 'Generic').toLowerCase() === (newItem.classification || 'Generic').toLowerCase() &&
-      normalizeVariantValue(variantOf(medicine)) === normalizeVariantValue(newVariantValue)
-    );
+    const dosageValue = newItem.strength || newItem.volume || '';
 
     const assignedCategories = currentUserAssignedCategory.split(',').map(c => normalizeCategory(c)).filter(Boolean);
     const normalizedCategory = normalizeCategory(category);
     const isAuthorized = currentUserRole !== 'staff' || assignedCategories.includes(normalizedCategory);
 
-    if (!name || !category || !expiry || !dosageForm || !newItem.classification || (strengthRequired && !strength) || !newItem.stock || !newItem.reorderLevel || (volumeRequired && !volume) || !volumeIsValid) {
-      setAddItemError(strengthRequired && !strength
-        ? 'Please provide the required Strength.'
-        : volumeRequired && !volume
-          ? 'Please provide the required Volume for this dosage form.'
-          : !volumeIsValid
-            ? 'Volume must use a valid container size such as 60 mL or 1 L.'
-          : 'Please fill in all required fields.');
-      return;
-    }
-
-    if (existingVariant) {
-      setAddItemError(`${name} ${dosageValue} already exists. Add a new supply batch from Inventory instead.`);
+    if (!name || !category || !expiry || !dosageForm || !newItem.classification || !dosageValue || !newItem.stock || !newItem.reorderLevel) {
+      setAddItemError('Please fill in all required fields.');
       return;
     }
 
@@ -1981,8 +1786,8 @@ export default function App() {
           medicine_name: name,
           classification: newItem.classification || 'Generic',
           dosage_form: dosageForm || 'Tablet',
-          strength: strength || undefined,
-          volume: volume || undefined,
+          strength: newItem.strength || undefined,
+          volume: newItem.volume || undefined,
           manufacturer: newItem.manufacturer || undefined,
           unit_type: newItem.unitType || 'pcs',
           base_unit: 'pcs',
@@ -2016,9 +1821,10 @@ export default function App() {
             quantity: parseInventoryNumber(newItem.stock) * Math.max(1, Number(newItem.conversionFactor) || 1),
         }] : []),
       });
-      // Re-read the API response so the screen reflects the actual database
-      // record (including its generated ID, supply row, stock, and timestamps).
-      await fetchMedicines();
+      // The POST response already contains the generated medicine and supply.
+      // Update local state immediately instead of waiting for another full
+      // inventory request over the Railway connection.
+      setMedicines((prev) => [created, ...prev.filter((medicine) => medicine.id !== created.id)]);
       setIsAddingMode(false);
       setNewItem(EMPTY_NEW_ITEM);
       notify({
@@ -2190,15 +1996,7 @@ export default function App() {
     });
   }, [token, medicines, fetchMedicines, notify]);
 
-  const handleAddSupply = useCallback(async (
-    id: number,
-    addedUnits: number,
-    expiry: string,
-    receivedDate?: string,
-    supplier?: string,
-    sellingPrice?: number,
-    classification?: string,
-  ) => {
+  const handleAddSupply = useCallback(async (id: number, addedUnits: number, expiry: string, receivedDate?: string, classification?: string) => {
     const med = medicines.find(m => m.id === id);
     if (!med) return;
     let currentMed = med;
@@ -2258,9 +2056,9 @@ export default function App() {
           quantity: addedUnits * Math.max(1, Number(currentMed.conversionFactor) || 1),
           expiry_date: expiry,
           received_date: receivedDate || undefined,
-          supplier: supplier?.trim() || currentMed.supplier || 'Unknown',
-          unit_cost: (sellingPrice || currentMed.unitPrice || 0) * 0.7,
-          selling_price: sellingPrice && sellingPrice > 0 ? sellingPrice : currentMed.unitPrice || 0,
+          supplier: currentMed.supplier || 'Unknown',
+          unit_cost: (currentMed.unitPrice || 0) * 0.7,
+          selling_price: currentMed.unitPrice || 0,
         }),
       });
 
@@ -2381,33 +2179,22 @@ export default function App() {
         reorderLevel: updatedMed.reorder_level,
         avgDailySales: updatedMed.avg_daily_sales,
       });
+      setMedicines((prev) => prev.map((m) => (m.id === updated.id ? updated : m)));
       if (currentUserRole === 'staff' && currentUserId !== null) {
         logStaffActivity({
           staffId: currentUserId,
           staffName: currentUserName || currentUserEmail || 'Staff',
           staffIdentifier: currentUserEmail || String(currentUserId),
-          action: 'Requested inventory adjustment',
-          detail: `${updated.name || 'Medicine'} supply #${supplyId}: ${quantity} (${adjustmentType})${reason ? ` — ${reason}` : ''}`,
+          action: 'Adjusted inventory quantity',
+          detail: `${updated.name || 'Medicine'} supply #${supplyId} quantity set to ${quantity} (${adjustmentType})${reason ? ` — ${reason}` : ''}`,
         });
       }
-      if (currentUserRole === 'staff') {
-        // Staff submissions are pending until an admin reviews them.
-        notify({
-          type: 'info',
-          title: 'Pending Admin Approval',
-          message: 'Your inventory adjustment was submitted. Stock will change only after admin approval.',
-        });
-      } else {
-        setMedicines((prev) => prev.map((m) => (m.id === updated.id ? updated : m)));
-        fetchMedicineAuditLogs();
-        notify({
-          type: 'success',
-          title: 'Supply quantity adjusted',
-          message: adjustmentType === 'count_correction'
-            ? `Batch count corrected to ${quantity}.`
-            : `${quantity} unit${quantity === 1 ? '' : 's'} deducted from the batch.`,
-        });
-      }
+      fetchMedicineAuditLogs();
+      notify({
+        type: 'success',
+        title: 'Supply quantity adjusted',
+        message: 'Batch quantity has been updated successfully.',
+      });
     } catch (err: any) {
       notify({
         type: 'error',
@@ -2483,52 +2270,30 @@ export default function App() {
 
     let total = 0;
     let units = 0;
-    let actualPurchaseTime: string | undefined;
-    const saleReference = `SALE-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
 
     for (const item of saleLines) {
       const medicine = medicines.find((med) => med.id === item.medicineId);
       if (!medicine) continue;
 
-      const isProtectedCustomer = item.customerType === 'senior_citizen' || item.customerType === 'pwd';
-      const grossAmount = (item.grossUnitPrice || item.unitPrice) * item.quantity;
-      const itemIsEligible = item.discountEligible !== false;
-      const itemNetOfVat = grossAmount / 1.12;
-
-      const savedTransaction = await createTransaction({
+      await createTransaction({
         medicine_id: item.medicineId,
         quantity: item.quantity,
         price: item.unitPrice,
-        sale_reference: saleReference,
         gross_amount: item.grossUnitPrice ? item.grossUnitPrice * item.quantity : item.unitPrice * item.quantity,
-        customer_id: item.customerId,
-        customer_name: item.customerName,
-        customer_id_number: item.customerIdNumber,
-        customer_type: item.customerType,
-        vatable_sales: isProtectedCustomer && itemIsEligible ? 0 : grossAmount / 1.12,
-        vat_amount: isProtectedCustomer && itemIsEligible ? 0 : grossAmount - itemNetOfVat,
-        vat_exempt_sales: isProtectedCustomer && itemIsEligible ? itemNetOfVat : 0,
+        vatable_sales: item.customerType === 'senior_citizen' ? 0 : (item.grossUnitPrice || item.unitPrice) * item.quantity / 1.12,
+        vat_amount: item.customerType === 'senior_citizen' ? 0 : ((item.grossUnitPrice || item.unitPrice) * item.quantity) - ((item.grossUnitPrice || item.unitPrice) * item.quantity / 1.12),
+        vat_exempt_sales: item.customerType === 'senior_citizen' ? (item.grossUnitPrice || item.unitPrice) * item.quantity / 1.12 : 0,
         discount_amount: item.discountAmount || 0,
-        senior_citizen_discount: item.customerType === 'senior_citizen' && itemIsEligible ? item.seniorCitizenDiscount || 0 : 0,
-        pwd_discount: item.customerType === 'pwd' && itemIsEligible ? item.seniorCitizenDiscount || 0 : 0,
+        senior_citizen_discount: item.customerType === 'senior_citizen' ? item.seniorCitizenDiscount || 0 : 0,
+        pwd_discount: 0,
         other_discount: item.customerType === 'regular' ? item.discountAmount || 0 : 0,
         net_sales: item.unitPrice * item.quantity,
-        discount_eligible: item.discountEligible,
-        eligible_subtotal: item.eligibleSubtotal,
-        non_eligible_subtotal: item.nonEligibleSubtotal,
-        sale_unit: item.saleUnit,
-        unit_factor: item.unitFactor,
-        category: item.category,
-        classification: item.classification,
-        dosage_form: item.dosageForm,
         cashier_name: currentUserEmail || currentUserName || undefined,
         payment_method: 'cash',
         transaction_type: 'sale',
         cash_received: cashReceived,
         change_amount: changeAmount,
       });
-
-      actualPurchaseTime ??= savedTransaction.created_at;
 
       total += item.quantity * item.unitPrice;
       units += item.quantity;
@@ -2539,7 +2304,7 @@ export default function App() {
         id: `SALE-${Date.now()}`,
         units,
         total,
-        timestamp: actualPurchaseTime || new Date().toISOString(),
+        timestamp: new Date().toISOString(),
         items,
       },
       ...current,
@@ -2555,7 +2320,40 @@ export default function App() {
       });
     }
 
-    await fetchMedicines();
+    // The transaction endpoint already completed the database update. Keep
+    // the POS responsive by applying the same FEFO deduction locally instead
+    // of waiting for a full /medicines reload.
+    const soldByMedicine = new Map<number, number>();
+    saleLines.forEach((item) => {
+      soldByMedicine.set(item.medicineId, (soldByMedicine.get(item.medicineId) || 0) + item.quantity);
+    });
+    setMedicines((current) => current.map((medicine) => {
+      const soldQuantity = soldByMedicine.get(medicine.id) || 0;
+      if (!soldQuantity) return medicine;
+
+      const supplies = Array.isArray(medicine.supplies) ? medicine.supplies : [];
+      if (!supplies.length) {
+        return { ...medicine, stock: Math.max(0, (medicine.stock || 0) - soldQuantity) };
+      }
+
+      const availableIds = new Set(
+        getFifoAvailableSupplies({ ...medicine, supplies: supplies.map((supply) => ({ ...supply })) })
+          .map((supply) => supply.id)
+      );
+      let remaining = soldQuantity;
+      const nextSupplies = supplies.map((supply) => {
+        if (remaining <= 0 || !availableIds.has(supply.id)) return supply;
+        const taken = Math.min(Number(supply.quantity) || 0, remaining);
+        remaining -= taken;
+        return { ...supply, quantity: Math.max(0, (Number(supply.quantity) || 0) - taken) };
+      });
+
+      return {
+        ...medicine,
+        supplies: nextSupplies,
+        stock: Math.max(0, (medicine.stock || 0) - soldQuantity),
+      };
+    }));
     fetchAdminStats();
     fetchAdminAlerts();
     notify({
@@ -2563,7 +2361,7 @@ export default function App() {
       title: 'Sale completed',
       message: `${units} unit${units === 1 ? '' : 's'} sold for ${formatPeso(total)}.`,
     });
-  }, [currentUserEmail, currentUserId, currentUserName, currentUserRole, fetchAdminAlerts, fetchAdminStats, fetchMedicines, medicines, notify]);
+  }, [currentUserEmail, currentUserId, currentUserName, currentUserRole, fetchAdminAlerts, fetchAdminStats, medicines, notify]);
 
   const appTopbar = !isDashboardHeaderHidden ? (
     <Topbar
@@ -2578,13 +2376,14 @@ export default function App() {
       onChange={handleSettingsChange}
       onSave={handleSaveSettings}
       onReset={handleResetSettings}
-      onLogout={requestLogout}
+      onLogout={handleLogout}
       showSettings={currentUserRole === 'admin'}
       isDarkMode={isDarkMode}
       onToggleDarkMode={handleToggleDarkMode}
       onCategoryAdded={loadAllCategories}
+      onSuppliersChanged={fetchSuppliers}
       existingInventoryCategories={availableInventoryCategories}
-      sectionTitle={{ dashboard: 'Dashboard', product: 'Point of Sale', inventory: 'Inventory', staff: 'Staff Management', insights: 'Insights', reports: 'Reports & Analytics', alerts: 'Alerts', transactions: 'Transactions', fifo: 'FEFO Inventory' }[activeTab]}
+      sectionTitle={{ dashboard: 'Dashboard', product: 'Point of Sale', inventory: 'Inventory', staff: 'Staff Management', insights: 'Insights', reports: 'Reports & Analytics', alerts: 'Alerts', transactions: 'Transactions', fifo: 'FIFO Inventory' }[activeTab]}
       onToggleSidebar={() => setIsSidebarOpen((open) => !open)}
       onGoDashboard={() => {
         setActiveTab('dashboard');
@@ -2694,13 +2493,10 @@ export default function App() {
         return (
           <TransactionPage
             onTransactionsChanged={fetchMedicines}
-            // Voiding transactions is an admin-only action. Staff may still
-            // view their transaction history, but must not see the action.
-            canApproveVoids={currentUserRole !== 'staff'}
+            canApproveVoids={currentUserRole !== 'staff' || !staffPermissions || staffPermissions.can_approve_voids}
             userRole={currentUserRole}
             currentUserEmail={currentUserEmail}
             currentUserName={currentUserName}
-            settings={settings}
           />
         );
 
@@ -2740,6 +2536,7 @@ export default function App() {
             newItemReceivedDate={newItem.receivedDate}
             newItemSellingPrice={newItem.sellingPrice}
             availableCategories={availableInventoryCategories}
+            availableSuppliers={availableSuppliers}
             onNewItemChange={handleNewItemChange}
             onStartAddItem={handleStartAddItem}
             onCancelAddItem={handleCancelAddItem}
@@ -2782,6 +2579,7 @@ export default function App() {
             onDeleteStaff={handleDeleteStaff}
             onUpdateStaffStatus={handleUpdateStaffStatus}
             onUpdateStaffPermissions={handleUpdateStaffPermissions}
+            onResetStaffPassword={handleResetStaffPassword}
             onRefresh={loadStaffMembers}
             globalMedicines={medicines}
             globalSalesTrend={salesTrend}
@@ -2810,7 +2608,6 @@ export default function App() {
             onPrint={() => window.print()}
             salesTrend={salesTrend}
             medicines={medicines}
-            inventoryThresholds={settings}
             onModalOpenChange={setIsReportsModalOpen}
             isDark={isDarkMode}
           />
@@ -2833,7 +2630,7 @@ export default function App() {
         );
 
       case 'alerts':
-        return <AlertsPanel statusCounts={alertInventoryOverview.counts} lowStockMeds={alertInventoryOverview.lowStock} criticalStockMeds={alertInventoryOverview.criticalStock} expiringSoonMeds={alertInventoryOverview.expiringSoon} expiredMeds={alertInventoryOverview.expired} healthyMeds={alertInventoryOverview.healthy} medicines={alertVisibleMedicines} notForSaleMeds={alertInventoryOverview.notForSale} userRole={currentUserRole} selectedAlertFilter={alertFilter} inventoryThresholds={settings} />;
+        return <AlertsPanel statusCounts={inventoryOverview.counts} lowStockMeds={inventoryOverview.lowStock} criticalStockMeds={inventoryOverview.criticalStock} expiringSoonMeds={inventoryOverview.expiringSoon} expiredMeds={inventoryOverview.expired} healthyMeds={inventoryOverview.healthy} medicines={activeVisibleMedicines} notForSaleMeds={(inventoryOverview as any).notForSale} userRole={currentUserRole} selectedAlertFilter={alertFilter} inventoryThresholds={settings} />;
 
       default:
         return <div className="text-slate-300">Select a tab from the sidebar.</div>;
@@ -2841,8 +2638,7 @@ export default function App() {
   };
 
   return (
-    <>
-      <Routes>
+    <Routes>
       <Route path="/auth/google/callback" element={<GoogleCallback />} />
       <Route
         path="/staff-login"
@@ -2864,18 +2660,18 @@ export default function App() {
                 logo={logo}
                 tabs={visibleSidebarTabs}
                 activeTab={activeTab}
+                alertFilter={alertFilter}
+                onAlertFilterChange={setAlertFilter}
                 productTypeFilter={productTypeFilter}
                 onProductTypeFilterChange={setProductTypeFilter}
                 onDosageFormFilterChange={setDosageFormFilter}
-                alertFilter={alertFilter}
-                onAlertFilterChange={(filter) => setAlertFilter(filter)}
                 onTabChange={(tab) => {
                   if (canAccessTab(currentUserRole, tab)) {
                     setActiveTab(tab);
                   }
                 }}
                 alertSummary={alertSummary}
-                onLogout={requestLogout}
+                onLogout={handleLogout}
                 isOpen={isSidebarOpen}
                 onClose={closeSidebarOnMobile}
               />
@@ -2883,7 +2679,7 @@ export default function App() {
               {/* topbar-layout  */}
               <div className="flex min-h-screen min-w-0 flex-1 flex-col gap-0 px-2 pb-2 pt-0 sm:px-3 sm:pb-3 md:ml-80">
                 {appTopbar}
-                <main className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
+                <main className="mobile-ui flex-1 overflow-y-auto overflow-x-hidden">
                   {renderContent()}
                 </main>
               </div>
@@ -2970,18 +2766,18 @@ export default function App() {
                 logo={logo}
                 tabs={visibleSidebarTabs}
                 activeTab={activeTab}
+                alertFilter={alertFilter}
+                onAlertFilterChange={setAlertFilter}
                 productTypeFilter={productTypeFilter}
                 onProductTypeFilterChange={setProductTypeFilter}
                 onDosageFormFilterChange={setDosageFormFilter}
-                alertFilter={alertFilter}
-                onAlertFilterChange={(filter) => setAlertFilter(filter)}
                 onTabChange={(tab) => {
                   if (canAccessTab(currentUserRole, tab)) {
                     setActiveTab(tab);
                   }
                 }}
                 alertSummary={alertSummary}
-                onLogout={requestLogout}
+                onLogout={handleLogout}
                 isOpen={isSidebarOpen}
                 onClose={closeSidebarOnMobile}
               />
@@ -2989,7 +2785,7 @@ export default function App() {
 
               <div className="flex min-h-screen min-w-0 flex-1 flex-col gap-0 px-2 pb-2 pt-0 sm:px-3 sm:pb-3 md:ml-80">
                 {appTopbar}
-                <main className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
+                <main className="mobile-ui flex-1 overflow-y-auto overflow-x-hidden">
                   {renderContent()}
                 </main>
               </div>
@@ -2997,65 +2793,6 @@ export default function App() {
           )
         }
       />
-      </Routes>
-
-            {/* Logout Confirm Modal */}
-      {logoutConfirmOpen && (
-        <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setLogoutConfirmOpen(false);
-          }}
-        >
-          <div
-            className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="logout-confirm-title"
-          >
-            <h2 id="logout-confirm-title" className="text-center text-2xl font-black text-slate-900">
-              Are you sure you want to logout?
-            </h2>
-            <p className="mt-2 text-center text-sm font-medium text-slate-500">
-              Your current session will be ended.
-            </p>
-            <div className="mt-6 flex gap-3">
-              <button
-                type="button"
-                className="flex-1 rounded-xl border-2 border-slate-200 bg-white px-4 py-3 font-extrabold text-slate-700 transition hover:bg-slate-50"
-                onClick={() => setLogoutConfirmOpen(false)}
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className="flex-1 rounded-xl bg-rose-600 px-4 py-3 font-extrabold text-white shadow-lg shadow-rose-200 transition hover:bg-rose-700"
-                onClick={() => {
-                  setLogoutConfirmOpen(false);
-                  handleLogout();
-                }}
-              >
-                Yes, Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Shared processing screen for password and OTP login. */}
-      <ProcessingModal
-        isOpen={showProcessingModal}
-        userName={pendingAuthDataRef.current?.data?.full_name}
-        onComplete={() => {
-          setShowProcessingModal(false);
-          const pending = pendingAuthDataRef.current;
-          if (pending) {
-            activateAuthenticatedSession(pending.data, pending.password);
-            pendingAuthDataRef.current = null;
-          }
-        }}
-      />
-    </>
+    </Routes>
   );
 }
