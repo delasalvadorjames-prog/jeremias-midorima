@@ -20,7 +20,7 @@ import { getFifoAvailableStock, getFifoAvailableSupplies } from './lib/fifo';
 import GoogleCallback from './pages/GoogleCallback';
 import StaffLogin from './pages/StaffLogin';
 import ProtectedStaffRoute from './ProtectedStaffRoute';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { CURRENT_ACCOUNT_EMAIL_KEY, createEmptyAccountState, loadAccountState, saveAccountState, normalizeAccountEmail } from './lib/accountStorage';
 import { GOOGLE_PENDING_SIGNUP_KEY } from './lib/googleAuth';
 import { formatPeso } from './lib/format';
@@ -711,13 +711,13 @@ export default function App() {
     fetchMedicineAuditLogs();
     loadAllCategories();
 
-    const interval = setInterval(() => {
-      fetchAdminStats();
-      fetchAdminAlerts();
-      fetchMedicineAuditLogs();
-      loadAllCategories();
-    }, 60000);
-
+  const interval = setInterval(() => {
+  fetchAdminStats();
+  
+  setTimeout(() => fetchAdminAlerts(), 5000);       // ← 5s delay
+  setTimeout(() => fetchMedicineAuditLogs(), 10000); // ← 10s delay
+  setTimeout(() => loadAllCategories(), 15000);      // ← 15s delay
+}, 60000);
     return () => clearInterval(interval);
   }, [token, currentUserRole, fetchAdminStats, fetchAdminAlerts, fetchMedicineAuditLogs, loadAllCategories]);
 
@@ -1439,11 +1439,16 @@ export default function App() {
         throw new Error(data.detail || 'Login failed');
       }
 
+           // ✅ Check OTP first — hindi pa naka-return ang role sa step na ito
       if (data.requires_otp) {
         setLoginStep('otp');
         setOtpError('');
         setLoginOtp('');
       } else {
+        // ✅ Role check pagkatapos ng OTP verification
+        if (data.role !== 'admin') {
+          throw new Error('Only administrator accounts can log in here.');
+        }
         activateAuthenticatedSession(data, password);
       }
     } catch (error) {
@@ -2643,12 +2648,16 @@ export default function App() {
       <Route
         path="/staff-login"
         element={
-          <StaffLogin
-            apiBase={API_BASE}
-            token={token}
-            currentRole={currentUserRole}
-            onAuthSuccess={activateAuthenticatedSession}
-          />
+          currentUserRole === 'admin' && token ? (
+            <Navigate to="/" replace />
+          ) : (
+            <StaffLogin
+              apiBase={API_BASE}
+              token={token}
+              currentRole={currentUserRole}
+              onAuthSuccess={activateAuthenticatedSession}
+            />
+          )
         }
       />
       <Route element={<ProtectedStaffRoute token={token} currentRole={currentUserRole} />}>
@@ -2760,6 +2769,8 @@ export default function App() {
                 setAuthError('');
               }}
             />
+          ) : currentUserRole !== 'admin' ? (
+            <Navigate to="/staff" replace />
           ) : (
             <div className={`flex min-h-screen flex-col md:flex-row transition-colors ${isDarkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'}`}>
               <Sidebar
